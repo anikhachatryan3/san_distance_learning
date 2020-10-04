@@ -6,23 +6,23 @@
   <div id="Side">
     <SideNav/>
   </div>
-    <ClassCard/>
+  <ClassCard />
   </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import NavBar from "./components/NavBar.vue";
-import SideNav from "./components/SideNav.vue";
-import ClassCard from "@/components/ClassCard";
+import Header from "./components/Header.vue"
+import NavBar from "./components/NavBar.vue"
+import SideNav from "./components/SideNav.vue"
+import ClassCard from "./components/ClassCard.vue"
 
 export default {
-  name: "App",
-  components: {
-    ClassCard,
-    Header,
-    NavBar,
-    SideNav
+   name: "app",
+   components: {
+   ClassCard,
+   Header,
+   NavBar,
+   SideNav,
   }
 };
 </script>
