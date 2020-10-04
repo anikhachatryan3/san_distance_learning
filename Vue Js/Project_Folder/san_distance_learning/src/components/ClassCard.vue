@@ -1,20 +1,20 @@
 <template>
-<div>
-  <b-card-group deck>
-    <b-card title="English Class"
-    bg-variant="light" 
-    img-src="https://static-s.aa-cdn.net/img/ios/415071093/bcac7393903dd60ebd9966a8ebab3bde?v=1" 
-    img-alt="Image" img-top
-    border-variant="dark"
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-3"
-    >
-      <b-card-text>
-      </b-card-text>
+  <div>
+    <b-card-group deck>
+      <b-card
+        title="English Class"
+        bg-variant="light"
+        img-src="https://static-s.aa-cdn.net/img/ios/415071093/bcac7393903dd60ebd9966a8ebab3bde?v=1"
+        img-alt="Image" img-top
+        border-variant="dark"
+        tag="article"
+        style="max-width: 20rem;"
+        class="mb-3"
+      >
+      <b-card-text></b-card-text>
       <b-button href="/english" variant="primary">Open</b-button>
       <template v-slot:footer>
-        <small class="text-muted">Name of Teacher</small>
+      <small class="text-muted">Name of Teacher</small>
       </template>
     </b-card>
 

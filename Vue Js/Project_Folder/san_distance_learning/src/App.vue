@@ -3,11 +3,20 @@
    <Header/>
     <NavBar/>
     <br/>
+    <b-container fluid>
+      <b-row>
+        <b-col sm>
   <div id="Side">
     <SideNav/>
   </div>
+        </b-col>
+        <b-col lg="*">
   <ClassCard />
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
+
 </template>
 
 <script>
