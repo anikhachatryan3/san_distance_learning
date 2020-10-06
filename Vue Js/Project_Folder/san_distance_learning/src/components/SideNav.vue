@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-nav vertical class="w-25" align="left" justified>
-      <b-button active href="/">DashBoard</b-button>
+      <b-button active href="/">Dashboard</b-button>
       <br/>
       <b-button active href="/grades">Grades</b-button>
       <br/>

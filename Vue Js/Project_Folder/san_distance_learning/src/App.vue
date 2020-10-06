@@ -6,12 +6,14 @@
     <b-container fluid>
       <b-row>
         <b-col sm>
-  <div id="Side">
+  <div id="side">
     <SideNav/>
   </div>
         </b-col>
         <b-col lg="*">
-  <ClassCard />
+          <div id ="classCard">
+            <ClassCard />
+          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -45,7 +47,12 @@ export default {
   color: #2c3e50;
   margin-top: 10px;
 }
-#Side {
+#side {
+  border-width: 1px;
+  border-color: black;
   text-align: left;
+}
+#classCard {
+  align-content: center;
 }
 </style>
