@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
 
     private function createTeacherUser() {
         $user = User::factory()->create([
-            'email' => 'teacher@csun.edu'
+            'email' => 'teacher@gmail.com'
         ]);
         $role = Role::where('role', 'Teacher')->firstOrFail();
         UserRole::factory()->create([
@@ -33,7 +33,7 @@ class UsersTableSeeder extends Seeder
 
     private function createStudentUser() {
         $user = User::factory()->create([
-            'email' => 'student@my.csun.edu'
+            'email' => 'student@gmail.com'
         ]);
         $role = Role::where('role', 'Student')->firstOrFail();
         UserRole::factory()->create([
