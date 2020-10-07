@@ -2,9 +2,9 @@
   <div>
     <b-nav vertical class="w-25" align="left" justified>
       <b-button active href="/">Dashboard</b-button>
-      <br/>
+      <br />
       <b-button active href="/grades">Grades</b-button>
-      <br/>
+      <br />
       <b-button active href="/calendar">Calendar</b-button>
       <!--      <b-nav-item disabled>Disabled</b-nav-item>-->
     </b-nav>
