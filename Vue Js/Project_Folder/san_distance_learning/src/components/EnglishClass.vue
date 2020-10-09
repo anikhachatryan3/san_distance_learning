@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "EnglishClass.vue"
+  name: "EnglishClass"
 };
 </script>
 
