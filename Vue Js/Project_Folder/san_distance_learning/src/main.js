@@ -5,18 +5,26 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 
 import App from "./App.vue";
 import VueRouter from "vue-router";
-import EnglishClass from "./components/EnglishClass";
 import Dashboard from "./components/Dashboard";
+import EnglishClass from "./components/EnglishClass";
+import MathClass from "./components/MathClass";
+import GeographyClass from "./components/GeographyClass";
+import ScienceClass from "./components/ScienceClass";
 
 Vue.use(VueRouter);
 
-Vue.config.productionTip = false;
+//Vue.config.productionTip = false;
+
+const routes = [
+  { path: "/", component: Dashboard },
+  { path: "/english", component: EnglishClass },
+  { path: "/math", component: MathClass },
+  { path: "/geography", component: GeographyClass},
+  { path: "/science", component: ScienceClass },
+];
 
 const router = new VueRouter({
-  routes: [
-    { path: "/", component: Dashboard.vue },
-    { path: "/english", component: EnglishClass.vue }
-  ],
+  routes,
   mode: "history"
 });
 
@@ -25,7 +33,7 @@ Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
 
-Vue.config.productionTip = false;
+//Vue.config.productionTip = false;
 
 new Vue({
   router,
