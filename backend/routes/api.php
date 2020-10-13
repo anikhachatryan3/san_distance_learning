@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/login', 'Auth\LoginController@login')->name('login');
+Route::get('/users/{user}/courses', 'App\Http\Controllers\CourseController@index')->name('courses.index');

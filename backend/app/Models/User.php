@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -41,4 +42,37 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /*
+    * Relationships
+    */
+    public function userRoles(): HasMany
+    {
+        return $this->hasMany(UserRole::class);
+    }
+
+    public function roles(): BelongsToMany
+    {
+        return $this->belongsToMany(Role::class, 'user_roles');
+    }
+
+    public function userCourses(): HasMany
+    {
+        return $this->hasMany(UserCourse::class, 'teacher_id');
+    }
+
+    public function courses(): BelongsToMany
+    {
+        return $this->belongsToMany(Course::class, 'user_courses', 'user_id', 'course_id');
+    }
+
+    public function submissions(): HasMany
+    {
+        return $this->hasMany(Submission::class);
+    }
+
+    public function announcements(): HasMany
+    {
+        return $this->hasMany(Announcement::class);
+    }
 }
