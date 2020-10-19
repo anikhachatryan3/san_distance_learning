@@ -3,9 +3,10 @@
 </template>
 
 <script>
+
 export default {
   name: "EnglishClass"
-};
+  };
 </script>
 
 <style scoped></style>
