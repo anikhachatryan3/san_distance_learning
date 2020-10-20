@@ -13,8 +13,6 @@ import ScienceClass from "./components/ScienceClass";
 
 Vue.use(VueRouter);
 
-//Vue.config.productionTip = false;
-
 const routes = [
   { path: "/", component: Dashboard },
   { path: "/english", component: EnglishClass },
@@ -33,7 +31,7 @@ Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
 
-//Vue.config.productionTip = false;
+Vue.config.productionTip = false;
 
 new Vue({
   router,
