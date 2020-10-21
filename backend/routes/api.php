@@ -19,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/login', 'Auth\LoginController@login')->name('login');
-Route::get('/users/{user}/courses', 'App\Http\Controllers\CourseController@index')->name('courses.index');
+// Route::get('/users/{user}/courses', 'App\Http\Controllers\CourseController@index')->name('courses.index');
+Route::get('/courses', 'App\Http\Controllers\CourseController@index')->name('courses.index');
