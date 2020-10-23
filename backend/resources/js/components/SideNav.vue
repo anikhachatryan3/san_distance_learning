@@ -6,6 +6,8 @@
       <b-button active href="/grades">Grades</b-button>
       <br />
       <b-button active href="/calendar">Calendar</b-button>
+      <br />
+      <b-button active href="/assignments">Assignments</b-button>
       <!--      <b-nav-item disabled>Disabled</b-nav-item>-->
     </b-nav>
   </div>

@@ -14,6 +14,9 @@
           <div id="classCard">
             <ClassCard />
           </div>
+          <div id="login">
+            <Login />
+          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -25,6 +28,7 @@ import Header from "./Header.vue";
 import NavBar from "./NavBar.vue";
 import SideNav from "./SideNav.vue";
 import ClassCard from "./ClassCard.vue";
+import Login from "./Login.vue";
 
 export default {
   name: "Dashboard",
@@ -32,7 +36,8 @@ export default {
     ClassCard,
     Header,
     NavBar,
-    SideNav
+    SideNav,
+    Login
   }
 };
 </script>

@@ -10,6 +10,7 @@ import EnglishClass from "../components/EnglishClass";
 import MathClass from "../components/MathClass";
 import GeographyClass from "../components/GeographyClass";
 import ScienceClass from "../components/ScienceClass";
+import Login from "../components/Login";
 
 Vue.use(VueRouter);
 // Install BootstrapVue
@@ -25,6 +26,7 @@ const routes = [
   { path: "/math", name: 'math', component: MathClass },
   { path: "/geography", name: 'geography', component: GeographyClass},
   { path: "/science", name: 'science', component: ScienceClass },
+  { path: "/login", name: 'login', component: Login },
 ];
 
 const router = new VueRouter({
