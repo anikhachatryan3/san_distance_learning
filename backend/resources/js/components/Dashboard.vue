@@ -25,7 +25,6 @@ import Header from "./Header.vue";
 import NavBar from "./NavBar.vue";
 import SideNav from "./SideNav.vue";
 import ClassCard from "./ClassCard.vue";
-import Login from "./Login.vue";
 
 export default {
   name: "Dashboard",

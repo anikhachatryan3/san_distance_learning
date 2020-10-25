@@ -71,6 +71,7 @@
 </style>
  <script>
     export default {
+      name:"SideNav",
       data:() => ({
         active: 'home',
       })
