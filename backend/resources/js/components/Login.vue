@@ -2,7 +2,7 @@
 <template>
     <div id="login">
         <b-card
-            img src="https://ibb.co/jgGTpHv"
+            img src="../pictures/Logo.png"
         >
             <b-button active href="/teacher">I am a teacher</b-button>
             <b-button active href="/student">I am a student</b-button>

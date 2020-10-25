@@ -14,9 +14,6 @@
           <div id="classCard">
             <ClassCard />
           </div>
-          <div id="login">
-            <Login />
-          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -36,8 +33,7 @@ export default {
     ClassCard,
     Header,
     NavBar,
-    SideNav,
-    Login
+    SideNav
   }
 };
 </script>

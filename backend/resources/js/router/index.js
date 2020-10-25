@@ -13,23 +13,33 @@ import MathClass from "../components/MathClass";
 import GeographyClass from "../components/GeographyClass";
 import ScienceClass from "../components/ScienceClass";
 import Login from "../components/Login";
+import Teacher_Dashboard from "../components/Teacher_Dashboard";
 
 Vue.use(VueRouter);
 // Install BootstrapVue
 Vue.use(BootstrapVue);
-Vue.use(Vuesax);
+Vue.use(Vuesax, {
+    colors: {
+        primary:'#5b3cc4',
+        success:'rgb(23,162,183)',
+        danger:'rgb(242, 19, 93)',
+        warning:'rgb(255, 130, 0)',
+        dark:'rgb(36, 33, 69)'
+    }
+})
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
 
 //Vue.config.productionTip = false;
 
 const routes = [
-  { path: "/", name: 'dashboard', component: Dashboard },
-  { path: "/english", name: 'english', component: EnglishClass },
-  { path: "/math", name: 'math', component: MathClass },
-  { path: "/geography", name: 'geography', component: GeographyClass},
-  { path: "/science", name: 'science', component: ScienceClass },
-  { path: "/login", name: 'login', component: Login },
+    { path: "/", name: 'login', component: Login },
+    { path: "/student", name: 'dashboard', component: Dashboard },
+    { path: "/teacher", name: 'Teacher_Dashboard', component: Teacher_Dashboard },
+    { path: "/english", name: 'english', component: EnglishClass },
+    { path: "/math", name: 'math', component: MathClass },
+    { path: "/geography", name: 'geography', component: GeographyClass},
+    { path: "/science", name: 'science', component: ScienceClass },
 ];
 
 const router = new VueRouter({

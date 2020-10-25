@@ -10,7 +10,7 @@
           img-top
           border-variant="dark"
           tag="article"
-          style="max-width: 20rem;"
+          style="max-width: 15rem;"
           class="mb-3"
         >
           <b-card-text></b-card-text>
