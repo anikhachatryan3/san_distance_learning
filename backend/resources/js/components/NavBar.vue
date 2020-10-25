@@ -9,12 +9,6 @@
         <b-navbar-nav>
           <!--          <b-nav-item href="#">Link</b-nav-item>-->
           <!--          <b-nav-item href="#" disabled>Disabled</b-nav-item>-->
-          <b-nav-item-dropdown text="Classes" left>
-            <b-dropdown-item href="#">English</b-dropdown-item>
-            <b-dropdown-item href="#">Math</b-dropdown-item>
-            <b-dropdown-item href="#">Geography</b-dropdown-item>
-            <b-dropdown-item href="#">Science</b-dropdown-item>
-          </b-nav-item-dropdown>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->

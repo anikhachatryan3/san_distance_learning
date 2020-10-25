@@ -8,7 +8,7 @@
         open
         >
 
-        <vs-sidebar-item id="Dashboard">
+        <vs-sidebar-item id="Dashboard" to="/Student">
 <!--          <template #icon>-->
 <!--            <i class='bx bx-home'></i>-->
 <!--          </template>-->

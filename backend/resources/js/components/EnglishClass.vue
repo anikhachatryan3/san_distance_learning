@@ -1,17 +1,29 @@
 <template>
-    <div id="EnglishClass">
+    <div id="profile">
         <Header />
         <NavBar />
         <br/>
         <vs-row>
-            <vs-col w="5">
+            <vs-col w="1">
                 <div id="side">
                     <SideNav />
                 </div>
             </vs-col>
-            <vs-col w="7">
+            <vs-col w="1">
+                    <b-nav vertical class="w-25" align="left" justified>
+                        <b-button active>Assignments</b-button>
+                        <br />
+                        <b-button active>People</b-button>
+                        <br />
+                        <b-button active>Announcements</b-button>
+                        <br />
+                        <b-button active>Private Messages</b-button>
+                    </b-nav>
+            </vs-col>
+            <vs-col w="10">
                 <div id="data">
-                    <h1>English Class Data</h1>
+                    <h1>Assignments</h1>
+                    <h5>No assignments due</h5>
                 </div>
             </vs-col>
         </vs-row>
