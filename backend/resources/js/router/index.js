@@ -2,6 +2,8 @@ import Vue from "vue";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
+import Vuesax from 'vuesax';
+import 'vuesax/dist/vuesax.css';
 
 // import App from "./App.vue";
 import VueRouter from "vue-router";
@@ -15,6 +17,7 @@ import Login from "../components/Login";
 Vue.use(VueRouter);
 // Install BootstrapVue
 Vue.use(BootstrapVue);
+Vue.use(Vuesax);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
 
