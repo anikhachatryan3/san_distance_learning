@@ -3,7 +3,7 @@
       <vs-sidebar
           background="success"
           text-white
-        absolute
+        relative
         v-model="active"
         open
         >

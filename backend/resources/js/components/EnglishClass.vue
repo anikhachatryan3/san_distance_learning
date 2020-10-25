@@ -1,20 +1,21 @@
 <template>
-  <div id="Dashboard">
-    <Header />
-    <NavBar />
-    <br />
-    <b-container fluid="">
-      <b-row>
-        <b-col sm="">
-          <div id="side">
-            <SideNav />
-          </div>
-        </b-col>
-        <b-col lg="*">
-        </b-col>
-      </b-row>
-    </b-container>
-  </div>
+    <div id="EnglishClass">
+        <Header />
+        <NavBar />
+        <br/>
+        <vs-row>
+            <vs-col w="5">
+                <div id="side">
+                    <SideNav />
+                </div>
+            </vs-col>
+            <vs-col w="7">
+                <div id="data">
+                    <h1>English Class Data</h1>
+                </div>
+            </vs-col>
+        </vs-row>
+    </div>
 </template>
 
 <script>
@@ -23,7 +24,7 @@ import NavBar from "./NavBar.vue";
 import SideNav from "./SideNav.vue";
 
 export default {
-  name: "Dashboard",
+  name: "EnglishClass",
   components: {
     Header,
     NavBar,
@@ -33,9 +34,7 @@ export default {
 </script>
 
 <style scoped>
-#side {
-  border-width: 1px;
-  border-color: black;
-  text-align: left;
+#data {
+  text-align: center;
 }
 </style>

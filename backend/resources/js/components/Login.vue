@@ -1,25 +1,39 @@
-
 <template>
     <div id="login">
-        <b-card
-            img src="../pictures/Logo.png"
-        >
-            <b-button active href="/teacher">I am a teacher</b-button>
-            <b-button active href="/student">I am a student</b-button>
-        </b-card>
+        <br/>
+        <br/>
+        <br/>
+        <h1 align="center">Welcome to San Distance Learning</h1>
+        <br/>
+        <br/>
+        <br/>
+        <img class="center" src="../../Pictures/Logo.png" alt="San_Logo" width="100" length="200">
+        <br/>
+        <br/>
+        <br/>
+        <div class="text-center">
+            <b-button active align="center" href="/teacher">I am a teacher</b-button>
+            <b-button active align="center" href="/student">I am a student</b-button>
+        </div>
     </div>
 </template>
 
 <script>
+export default {
+    name: "Login"
+}
 </script>
 
-<style scoped>
+<style>
     #login {
-        width: 500px;
-        border: 1px solid #CCCCCC;
-        background-color: #FFFFFF;
+        align-content: center;
         margin: auto;
-        margin-top: 200px;
-        padding: 20px;
+        width: 700px;
+    }
+    .center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
     }
 </style>
