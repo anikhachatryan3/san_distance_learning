@@ -27,7 +27,7 @@ class CourseControllerTest extends TestCase
         })->firstOrFail();
         $course = Course::firstOrFail();
 
-        $this->getJson(route('courses.index', $user))->dump()->assertJsonFragment(
+        $this->getJson(route('courses.index', $user))->assertJsonFragment(
             (new CourseResource($course))->toArray(new Request()),
         );
     }

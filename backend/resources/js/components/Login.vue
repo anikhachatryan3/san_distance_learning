@@ -11,16 +11,44 @@
         <br/>
         <br/>
         <br/>
-        <div class="text-center">
+        <!-- <div class="text-center">
             <b-button active align="center" href="/teacher">I am a teacher</b-button>
             <b-button active align="center" href="/student">I am a student</b-button>
+        </div> -->
+        <div>
+            <h1>Login</h1>
+            <div>
+                Email:<input v-model="email" type="email" />
+            </div>
+            <div>
+                Password:<input v-model="password" type="password" />
+            </div>
+            <button @click="login()">Login</button>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-    name: "Login"
+    name: "Login",
+    data() {
+        return {
+            email: '',
+            password: '',
+        }
+    },
+    methods: {
+        login() {
+            axios.post('/api/login', {
+                'email' : this.email,
+                'password' : this.password
+            })
+            .then(function(response) {
+                console.log(response);
+            });
+        }
+    }
 }
 </script>
 
