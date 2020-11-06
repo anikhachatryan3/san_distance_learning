@@ -52,7 +52,9 @@ export default {
                     'password' : this.password
                 })
                 .then(function(response) {
-                    self.$session.start()
+                    self.$session.start();
+                    self.$session.set('user', response.data.data);
+                    self.$session.set('auth', response.data.data);
                     self.$store.commit('login', response.data.data);
                     if(response.data.data.role_name == 'Teacher') {
                         self.$router.push({name: 'Teacher_Dashboard'});

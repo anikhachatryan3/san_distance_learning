@@ -21,7 +21,7 @@
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
             <template v-slot:button-content>
-              <em>User</em>
+              <em>{{ user }}</em>
             </template>
             <b-dropdown-item href="/Profile">Profile</b-dropdown-item>
             <b-dropdown-item href="#">Sign Out</b-dropdown-item>
@@ -31,3 +31,16 @@
     </b-navbar>
   </div>
 </template>
+
+<script>
+
+export default {
+  name: "NavBar",
+  computed: {
+    user() {
+      let u = this.$session.get('user');
+      return u.first_name + ' ' + u.last_name;
+    }
+  }
+};
+</script>
