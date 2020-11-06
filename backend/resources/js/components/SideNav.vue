@@ -24,7 +24,7 @@
         </vs-sidebar-item>
 
 
-        <vs-sidebar-item id="Calendar">
+        <vs-sidebar-item id="Calendar" to="/Calendar">
 <!--          <template #icon>-->
 <!--            <i class='bx bxs-music'></i>-->
 <!--          </template>-->
