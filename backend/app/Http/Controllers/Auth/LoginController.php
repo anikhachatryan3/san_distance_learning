@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -38,10 +39,10 @@ class LoginController extends Controller
         ]);
         
         if(Auth::attempt($credentials)) {
-            return auth()->user();
+            return new UserResource(auth()->user());
         }
         return response()->json([
-            'error' => 'Invalid Email or Password'
+            'email' => 'Invalid Email or Password'
         ], 404);
     }
 }

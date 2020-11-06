@@ -17,13 +17,14 @@
         </div> -->
         <div>
             <h1>Login</h1>
+            <div class="text-danger">{{ error }}</div>
             <div>
-                Email:<input v-model="email" type="email" />
+                Email:<input v-model="email" type="email" @keydown="error = ''" />
             </div>
             <div>
-                Password:<input v-model="password" type="password" />
+                Password:<input v-model="password" type="password" @keydown="error = ''" />
             </div>
-            <button @click="login()">Login</button>
+            <button id="login_button" @click="login()">Login</button>
         </div>
     </div>
 </template>
@@ -36,17 +37,34 @@ export default {
         return {
             email: '',
             password: '',
+            error: '',
         }
     },
     methods: {
         login() {
-            axios.post('/api/login', {
-                'email' : this.email,
-                'password' : this.password
-            })
-            .then(function(response) {
-                console.log(response);
-            });
+            if(this.email == '' || this.password == '') {
+                this.error = 'Please enter a valid email and/or password.'
+            }
+            else {
+                let self = this;
+                axios.post('/api/login', {
+                    'email' : this.email,
+                    'password' : this.password
+                })
+                .then(function(response) {
+                    self.$session.start()
+                    self.$store.commit('login', response.data.data);
+                    if(response.data.data.role_name == 'Teacher') {
+                        self.$router.push({name: 'Teacher_Dashboard'});
+                    }
+                    else {
+                        self.$router.push({name: 'Student_Dashboard'});
+                    }
+                })
+                .catch(function(error) {
+                    self.error = 'Invalid email or password.'
+                });
+            }
         }
     }
 }
@@ -63,5 +81,8 @@ export default {
         margin-left: auto;
         margin-right: auto;
         width: 50%;
+    }
+    #login_button:active {
+        background-color: #e3e3e3;
     }
 </style>
