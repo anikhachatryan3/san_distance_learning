@@ -13,7 +13,7 @@
                 <div id="data">
                     <h1 align="left">User Profile</h1>
                     <br/>
-                    <h5 align="left">Contact:</h5>
+                    <h5 align="left">Name:</h5>
                     <br/>
                     <h5 align="left">Phone Number:</h5>
                     <br/>

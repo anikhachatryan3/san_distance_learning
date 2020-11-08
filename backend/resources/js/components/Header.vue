@@ -1,6 +1,6 @@
 <template>
   <div class="title">
-    <h1>SAN Distance Learning</h1>
+    <h1>San Distance Learning</h1>
   </div>
 </template>
 

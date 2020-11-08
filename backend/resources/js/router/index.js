@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import Vuesax from 'vuesax';
 import 'vuesax/dist/vuesax.css';
+import PortalVue from "portal-vue";
 
 // import App from "./App.vue";
 import VueRouter from "vue-router";
@@ -17,6 +18,7 @@ import Teacher_Dashboard from "../components/Teacher_Dashboard";
 import Profile from "../components/Profile";
 import Calendar from "../components/Calendar";
 
+Vue.use(PortalVue);
 Vue.use(VueRouter);
 // Install BootstrapVue
 Vue.use(BootstrapVue);

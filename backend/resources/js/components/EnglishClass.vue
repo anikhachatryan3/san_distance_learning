@@ -23,7 +23,6 @@
             <vs-col w="10">
                 <div id="data">
                     <h1>Assignments</h1>
-                    <h5>No assignments due</h5>
                     <iframe src="https://i.simmer.io/@natkes/wordsearch" style="width:960px;height:600px"></iframe>
                 </div>
             </vs-col>
