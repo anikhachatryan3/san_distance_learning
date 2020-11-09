@@ -22,12 +22,9 @@
             </vs-col>
             <vs-col w="10">
                 <div id="data">
-                    <h1>Calendar</h1>
-                    <br/>
-                                             
+                    <h1>Calendar</h1>        
                     <!-- <vue-google-calendar :data="calendarData"/> -->       
                     <kalendar :configuration="calendar_settings" :events.sync="events" />
-
                 </div>
             </vs-col>
         </vs-row>
@@ -58,8 +55,8 @@ export default {
         scrollToNow: true,
         start_day: new Date().toISOString(),
         read_only: false,
-        day_starts_at: 0,
-        day_ends_at: 24,
+        day_starts_at: 8,
+        day_ends_at: 21,
         overlap: true,
         hide_dates: ['2019-10-31'], // Spooky
         hide_days: [6],
