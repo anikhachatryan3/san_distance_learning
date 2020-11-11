@@ -17,6 +17,10 @@ import Login from "../components/Login";
 import Teacher_Dashboard from "../components/Teacher_Dashboard";
 import Profile from "../components/Profile";
 import Calendar from "../components/Calendar";
+import Assignment from "../components/Assignment";
+import People from "../components/People";
+import Announcement from "../components/Announcement";
+import PrivateMessages from "../components/PrivateMessages";
 
 Vue.use(PortalVue);
 Vue.use(VueRouter);
@@ -46,6 +50,10 @@ const routes = [
     { path: "/science", name: 'science', component: ScienceClass },
     { path: "/profile", name: 'profile', component: Profile },
     { path: "/calendar", name: 'calendar', component: Calendar },
+    { path: "/assignment", name: 'assignment', component: Assignment},
+    { path: "/people", name: 'people', component: People},
+    { path: "/announcement", name: 'announcement', component: Announcement},
+    { path: "/privatemessages", name: 'privatemessages', component: PrivateMessages},
 ];
 
 const router = new VueRouter({
