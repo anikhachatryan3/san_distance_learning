@@ -5,11 +5,11 @@
         <br />
         <b-container fluid="">
             <b-row>
-                <b-col sm="">
+                <!-- <b-col sm=""> -->
                     <div id="side">
                         <SideNav dashboard="Teacher_Dashboard"/>
                     </div>
-                </b-col>
+                <!-- </b-col> -->
                 <b-col lg="*">
                     <div id="classCard">
                         <TeacherClassCard />

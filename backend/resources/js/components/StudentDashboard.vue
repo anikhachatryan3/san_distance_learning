@@ -5,16 +5,14 @@
     <br />
     <b-container fluid="">
       <b-row>
-        <b-col sm="">
-          <div id="side">
-            <SideNav dashboard="StudentDashboard" />
-          </div>
-        </b-col>
+        <!-- <b-col> -->
+        <div id="side">
+          <SideNav dashboard="StudentDashboard" />
+        </div>
+        <!-- </b-col> -->
         <b-col lg="*">
-          <div class="rightPadding">
-            <div id="classCard">
-              <ClassCard />
-            </div>
+          <div id="classCard">
+            <ClassCard />
           </div>
         </b-col>
       </b-row>

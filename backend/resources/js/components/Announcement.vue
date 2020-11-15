@@ -12,6 +12,12 @@
             </vs-row>
     </div>
 </template>
+
+<style scoped>
+  #side {
+    width: 200px;
+  }
+</style>
 <script>
 import Header from "./Header.vue";
 import NavBar from "./NavBar.vue";

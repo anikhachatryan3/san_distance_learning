@@ -4,7 +4,7 @@
         <NavBar />
         <br/>
         <vs-row vs-w="10" vs-type="flex">
-            <vs-col w="2">
+            <vs-col w="1">
                 <div id="side">
                     <SideNav />
                 </div>
@@ -21,7 +21,7 @@
                     </b-nav>
             </vs-col>
             <vs-col w="9">
-                <div id="data">
+                <div id="data" class="leftPadding">
                     <h1>Calendar</h1>
                     <!-- <vue-google-calendar :data="calendarData"/> -->
                     <kalendar :configuration="calendar_settings" :events.sync="events" />
@@ -82,7 +82,7 @@ export default {
             from: '2020-12-03T09:00:00Z',
             to: '2020-12-03T15:00:00Z',
             data: 'Study',
-        }, // study
+        } // study
         ],
     })
 
@@ -91,5 +91,7 @@ export default {
 
 
 <style scoped>
-
+    .leftPadding {
+        padding-left: 5%;
+    }
 </style>
