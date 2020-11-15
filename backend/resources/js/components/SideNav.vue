@@ -7,9 +7,12 @@
         v-model="active"
         open
         >
-        <vs-sidebar-item id="Dashboard" v-bind:to="dashboard">
+        <vs-sidebar-item v-if="dashboard=='Teacher'" to="Teacher_Dashboard">
           Dashboard
         </vs-sidebar-item>
+          <vs-sidebar-item v-if="dashboard=='Student'" to="StudentDashboard">
+              Dashboard
+          </vs-sidebar-item>
         <vs-sidebar-item id="Grades">
           Grades
         </vs-sidebar-item>
@@ -22,11 +25,13 @@
 
 <style></style>
  <script>
+ // console.log(self.$session.get('user').role_name);
+
     export default {
       name:"SideNav",
       data:() => ({
         active: 'home',
-          dashboard: "",
+          dashboard: self.$session.get('user').role_name,
       })
     }
   </script>

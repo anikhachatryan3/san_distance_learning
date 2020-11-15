@@ -7,7 +7,7 @@
         <br/>
         <br/>
         <br/>
-        <img class="center" src="../../Pictures/Logo.png" alt="San_Logo" width="100" length="200">
+        <img class="center" src="../../Pictures/Logo.png" alt="San_Logo" width="50" length="100">
         <br/>
         <br/>
         <br/>
@@ -51,6 +51,7 @@ export default {
                     self.$session.start();
                     self.$session.set('user', response.data.data);
                     self.$session.set('auth', response.data.data);
+                    // self.$session.set('role', response.data.data.role_name);
                     self.$store.commit('login', response.data.data);
                     if(response.data.data.role_name == 'Teacher') {
                         self.$router.push({name: 'Teacher_Dashboard'});

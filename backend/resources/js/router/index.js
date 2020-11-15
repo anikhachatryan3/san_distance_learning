@@ -9,7 +9,8 @@ import PortalVue from "portal-vue";
 // import App from "./App.vue";
 import VueRouter from "vue-router";
 import StudentDashboard from "../components/StudentDashboard";
-import EnglishClass from "../components/EnglishClass";
+import StudentEnglishClass from "../components/StudentEnglishClass";
+import TeacherEnglishClass from "../components/TeacherEnglishClass";
 import MathClass from "../components/MathClass";
 import GeographyClass from "../components/GeographyClass";
 import ScienceClass from "../components/ScienceClass";
@@ -21,6 +22,7 @@ import Assignment from "../components/Assignment";
 import People from "../components/People";
 import Announcement from "../components/Announcement";
 import PrivateMessages from "../components/PrivateMessages";
+import CreateEnglishAssignment from "../components/CreateEnglishAssignment";
 
 Vue.use(PortalVue);
 Vue.use(VueRouter);
@@ -43,8 +45,9 @@ Vue.use(IconsPlugin);
 const routes = [
     { path: "/", name: 'login', component: Login },
     { path: "/studentDashboard", name: 'StudentDashboard', component: StudentDashboard },
-    { path: "/teacher", name: 'Teacher_Dashboard', component: Teacher_Dashboard },
-    { path: "/english", name: 'english', component: EnglishClass },
+    { path: "/Teacher_Dashboard", name: 'Teacher_Dashboard', component: Teacher_Dashboard },
+    { path: "/StudentEnglishClass", name: 'StudentEnglishClass', component: StudentEnglishClass },
+    { path: "/TeacherEnglishClass", name: 'TeacherEnglishClass', component: TeacherEnglishClass },
     { path: "/math", name: 'math', component: MathClass },
     { path: "/geography", name: 'geography', component: GeographyClass},
     { path: "/science", name: 'science', component: ScienceClass },
@@ -54,6 +57,7 @@ const routes = [
     { path: "/people", name: 'people', component: People},
     { path: "/announcement", name: 'announcement', component: Announcement},
     { path: "/privatemessages", name: 'privatemessages', component: PrivateMessages},
+    { path: "/TeacherEnglishClass/CreateEnglishAssignment", name: 'CreateEnglishAssignment', component: CreateEnglishAssignment},
 ];
 
 const router = new VueRouter({
