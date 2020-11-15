@@ -1,25 +1,29 @@
 <template>
     <div id="loginPage">
-        <br/>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <h1 align="center">Welcome to San Distance Learning</h1>
         <br/>
+<<<<<<< Updated upstream
         <br/>
         <br/>
         <img class="center" src="../../Pictures/Logo.png" alt="San_Logo" width="50" length="100">
+=======
+        <br/>       
+        <img class="center" src="../../Pictures/Logo.png" alt="San_Logo" width="100" length="200">
+>>>>>>> Stashed changes
         <br/>
         <br/>
-        <br/>
-        <div id = "login">
+        <div id= "login" align="center">
             <h1>Login</h1>
             <div class="text-danger">{{ error }}</div>
             <div>
-                Email:<input v-model="email" type="email" @keydown="error = ''" />
+                Email: <input v-model="email" type="email" @keydown="error = ''" />
             </div>
             <div>
-                Password:<input v-model="password" type="password" @keydown="error = ''" />
+                Password: <input v-model="password" type="password" @keydown="error = ''" />
             </div>
+            <br />
             <button id="login_button" @click="login()">Login</button>
         </div>
     </div>
@@ -88,5 +92,11 @@ export default {
     }
     #login_button:active {
         background-color: #e3e3e3;
+    }
+
+    body {
+        background-image: url("../../Pictures/background.jpg");
+        background-color: #cccccc;
+        background-size: cover;
     }
 </style>

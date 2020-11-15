@@ -3,9 +3,9 @@
       <vs-sidebar
           background="success"
           text-white
-        relative
-        v-model="active"
-        open
+          relative
+          v-model="active"
+          open
         >
         <vs-sidebar-item v-if="dashboard=='Teacher'" to="Teacher_Dashboard">
           Dashboard

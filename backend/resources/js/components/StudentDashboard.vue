@@ -7,12 +7,14 @@
       <b-row>
         <b-col sm="">
           <div id="side">
-            <SideNav dashboard="StudentDashboard"/>
+            <SideNav dashboard="StudentDashboard" />
           </div>
         </b-col>
         <b-col lg="*">
-          <div id="classCard">
-            <ClassCard />
+          <div class="rightPadding">
+            <div id="classCard">
+              <ClassCard />
+            </div>
           </div>
         </b-col>
       </b-row>
@@ -32,8 +34,8 @@ export default {
     ClassCard,
     Header,
     NavBar,
-    SideNav
-  }
+    SideNav,
+  },
 };
 </script>
 
@@ -45,5 +47,9 @@ export default {
 }
 #classCard {
   align-content: center;
+}
+
+#rightPadding {
+  padding-right: 100px;
 }
 </style>
