@@ -48,19 +48,19 @@ export default {
     },
 
     data: () => ({
-        calendar_settings: {
-        style: 'material_design',
-        view_type: 'week',
-        cell_height: 20,
-        scrollToNow: true,
-        start_day: new Date().toISOString(),
-        read_only: false,
-        day_starts_at: 8,
-        day_ends_at: 21,
-        overlap: true,
-        hide_dates: ['2019-10-31'], // Spooky
-        hide_days: [6],
-        past_event_creation: true
+ calendar_settings: {
+      style: 'material_design',
+      view_type: 'week',
+      cell_height: 20,
+      scrollToNow: true,
+      start_day: new Date().toISOString(),
+      read_only: false,
+      day_starts_at: 0,
+      day_ends_at: 24,
+      overlap: true,
+      hide_dates: ['2019-10-31'], // Spooky
+      hide_days: [6],
+      past_event_creation: true
         },
         events: [
         {
@@ -92,6 +92,6 @@ export default {
 
 <style scoped>
     .leftPadding {
-        padding-left: 5%;
+        padding-left: 2%;
     }
 </style>
