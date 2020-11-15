@@ -5,7 +5,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 
 import App from "./App.vue";
 import VueRouter from "vue-router";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/StudentDashboard";
 import EnglishClass from "./components/EnglishClass";
 import MathClass from "./components/MathClass";
 import GeographyClass from "./components/GeographyClass";

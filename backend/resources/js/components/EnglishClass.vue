@@ -6,7 +6,7 @@
         <vs-row>
             <vs-col w="1">
                 <div id="side">
-                    <SideNav />
+                    <SideNav dashboard="StudentDashboard"/>
                 </div>
             </vs-col>
             <vs-col w="1">

@@ -1,5 +1,5 @@
 <template>
-    <div id="login">
+    <div id="loginPage">
         <br/>
         <br/>
         <br/>
@@ -11,11 +11,7 @@
         <br/>
         <br/>
         <br/>
-        <!-- <div class="text-center">
-            <b-button active align="center" href="/teacher">I am a teacher</b-button>
-            <b-button active align="center" href="/student">I am a student</b-button>
-        </div> -->
-        <div>
+        <div id = "login">
             <h1>Login</h1>
             <div class="text-danger">{{ error }}</div>
             <div>
@@ -60,7 +56,7 @@ export default {
                         self.$router.push({name: 'Teacher_Dashboard'});
                     }
                     else {
-                        self.$router.push({name: 'Student_Dashboard'});
+                        self.$router.push({name: 'StudentDashboard'});
                     }
                 })
                 .catch(function(error) {
@@ -83,6 +79,11 @@ export default {
         margin-left: auto;
         margin-right: auto;
         width: 50%;
+    }
+    #loginPage {
+        align-content: center;
+        margin: auto;
+        width: 700px;
     }
     #login_button:active {
         background-color: #e3e3e3;

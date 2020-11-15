@@ -7,7 +7,7 @@
             <b-row>
                 <b-col sm="">
                     <div id="side">
-                        <SideNav />
+                        <SideNav dashboard="Teacher_Dashboard"/>
                     </div>
                 </b-col>
                 <b-col lg="*">

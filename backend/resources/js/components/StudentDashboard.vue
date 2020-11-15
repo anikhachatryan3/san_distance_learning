@@ -1,5 +1,5 @@
 <template>
-  <div id="Dashboard">
+  <div id="StudentDashboard">
     <Header />
     <NavBar />
     <br />
@@ -7,7 +7,7 @@
       <b-row>
         <b-col sm="">
           <div id="side">
-            <SideNav />
+            <SideNav dashboard="StudentDashboard"/>
           </div>
         </b-col>
         <b-col lg="*">
@@ -27,7 +27,7 @@ import SideNav from "./SideNav.vue";
 import ClassCard from "./ClassCard.vue";
 
 export default {
-  name: "Dashboard",
+  name: "StudentDashboard",
   components: {
     ClassCard,
     Header,

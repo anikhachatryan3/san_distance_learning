@@ -1,10 +1,10 @@
-<template> 
+<template>
     <div id="calendar">
         <Header />
         <NavBar />
         <br/>
         <vs-row vs-w="10" vs-type="flex">
-            <vs-col w="1">
+            <vs-col w="2">
                 <div id="side">
                     <SideNav />
                 </div>
@@ -20,10 +20,10 @@
                         <b-button active>Private Messages</b-button>
                     </b-nav>
             </vs-col>
-            <vs-col w="10">
+            <vs-col w="9">
                 <div id="data">
-                    <h1>Calendar</h1>        
-                    <!-- <vue-google-calendar :data="calendarData"/> -->       
+                    <h1>Calendar</h1>
+                    <!-- <vue-google-calendar :data="calendarData"/> -->
                     <kalendar :configuration="calendar_settings" :events.sync="events" />
                 </div>
             </vs-col>

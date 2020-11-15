@@ -8,7 +8,7 @@ import PortalVue from "portal-vue";
 
 // import App from "./App.vue";
 import VueRouter from "vue-router";
-import Dashboard from "../components/Dashboard";
+import StudentDashboard from "../components/StudentDashboard";
 import EnglishClass from "../components/EnglishClass";
 import MathClass from "../components/MathClass";
 import GeographyClass from "../components/GeographyClass";
@@ -42,7 +42,7 @@ Vue.use(IconsPlugin);
 
 const routes = [
     { path: "/", name: 'login', component: Login },
-    { path: "/student", name: 'dashboard', component: Dashboard },
+    { path: "/studentDashboard", name: 'StudentDashboard', component: StudentDashboard },
     { path: "/teacher", name: 'Teacher_Dashboard', component: Teacher_Dashboard },
     { path: "/english", name: 'english', component: EnglishClass },
     { path: "/math", name: 'math', component: MathClass },
