@@ -25,13 +25,16 @@
 
 <style></style>
  <script>
- // console.log(self.$session.get('user').role_name);
+ // console.log(this.$session.get('user').role_name);
 
     export default {
       name:"SideNav",
       data:() => ({
         active: 'home',
-          dashboard: self.$session.get('user').role_name,
-      })
+        dashboard: '',
+      }),
+      created() {
+        this.dashboard = this.$session.get('user').role_name;
+      }
     }
   </script>

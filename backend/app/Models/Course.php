@@ -29,13 +29,13 @@ class Course extends Model
         return $this->hasMany(UserCourse::class);
     }
 
-    public function courseAssignments(): HasMany
-    {
-        return $this->hasMany(CourseAssignment::class);
-    }
-
     public function announcements(): HasMany
     {
         return $this->hasMany(Announcement::class);
+    }
+
+    public function assigments(): HasMany
+    {
+        return $this->hasMany(Assignment::class);
     }
 }

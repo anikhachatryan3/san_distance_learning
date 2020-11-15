@@ -23,7 +23,7 @@
             <vs-col w="10">
                 <div id="data">
                     <h1>Assignments</h1>
-                    <vs-button active id="create" to="/CreateEnglishAssignment">
+                    <vs-button active id="create" to="TeacherEnglishClass/CreateEnglishAssignment">
                         Create Assignment
                     </vs-button>
                 </div>

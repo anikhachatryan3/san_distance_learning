@@ -23,7 +23,7 @@
             <vs-col w="10">
                 <div id="data">
                     <h1>Create Assignment</h1>
-                    <vs-button id="create">
+                    <vs-button id="create" @click="assignEnglish()">
                         Create Default Assignment
                     </vs-button>
 
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Header from "./Header.vue";
 import NavBar from "./NavBar.vue";
 import SideNav from "./SideNav.vue";
@@ -44,6 +45,19 @@ name: "CreateEnglishAssignment",
         Header,
         NavBar,
         SideNav
+    },
+    methods: {
+        assignEnglish() {
+            let self = this;
+            axios.put('/api/assignments/1')
+            .then(function(response) {
+                alert('assignment published');
+                self.$session.set('published', true);
+            })
+            .catch(function(error) {
+                alert('error publishing assignment');
+            });
+        }
     }
 }
 </script>
