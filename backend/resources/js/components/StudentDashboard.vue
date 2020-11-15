@@ -5,11 +5,11 @@
     <br />
     <b-container fluid="">
       <b-row>
-        <b-col sm="">
-          <div id="side">
-            <SideNav dashboard="StudentDashboard"/>
-          </div>
-        </b-col>
+        <!-- <b-col> -->
+        <div id="side">
+          <SideNav dashboard="StudentDashboard" />
+        </div>
+        <!-- </b-col> -->
         <b-col lg="*">
           <div id="classCard">
             <ClassCard />
@@ -32,8 +32,8 @@ export default {
     ClassCard,
     Header,
     NavBar,
-    SideNav
-  }
+    SideNav,
+  },
 };
 </script>
 
@@ -45,5 +45,9 @@ export default {
 }
 #classCard {
   align-content: center;
+}
+
+#rightPadding {
+  padding-right: 100px;
 }
 </style>

@@ -4,22 +4,22 @@
         <NavBar />
         <br/>
         <vs-row>
-            <vs-col w="3">
+            <vs-col w="2">
                 <div id="side">
                     <SideNav />
                 </div>
             </vs-col>
             <vs-col w="9">
                 <div id="data">
-                    <h1 align="left">User Profile</h1>
+                    <h1>User Profile</h1>
                     <br/>
-                    <h5 align="left">Name:</h5>
+                    <h5>Name:</h5>
                     <br/>
-                    <h5 align="left">Phone Number:</h5>
+                    <h5>Phone Number:</h5>
                     <br/>
-                    <h5 align="left">Email:</h5>
+                    <h5>Email:</h5>
                     <br/>
-                    <h5 align="left">Address:</h5>
+                    <h5>Address:</h5>
                 </div>
             </vs-col>
         </vs-row>
