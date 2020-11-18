@@ -2,8 +2,8 @@
   <div id="loginPage">
     <br />
     <br />
-    <h1 align="center">Welcome to San Distance Learning</h1>
     <br />
+    <h1 style="text-align:center">Welcome to San Distance Learning</h1>
     <br />
     <img
       class="center"
@@ -12,10 +12,8 @@
       width="50"
       length="100"
     />
-
     <br />
-    <br />
-    <div id="login" align="center">
+    <div id="login" style="text-align:center">
       <h1>Login</h1>
       <div class="text-danger">{{ error }}</div>
       <div>
@@ -99,5 +97,6 @@ body {
   background-image: url("../../Pictures/background.jpg");
   background-color: #cccccc;
   background-size: cover;
+  alt:"Background Image"
 }
 </style>
