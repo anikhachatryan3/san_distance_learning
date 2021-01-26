@@ -70,7 +70,7 @@ export default {
             let self = this;
             axios.put('/api/assignments/1')
                 .then(function(response) {
-                    alert('assignment published');
+                    alert('assignment submitted');
                     self.$session.set('published', false);
                 })
                 .catch(function(error) {
