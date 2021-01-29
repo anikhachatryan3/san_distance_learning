@@ -14,7 +14,7 @@
           class="mb-3"
         >
           <b-card-text></b-card-text>
-          <b-button :href="'/student' + course.subject_name.toLowerCase() + 'class'" variant="primary">Open</b-button>
+          <b-button :to="'/student' + course.subject_name.toLowerCase() + 'class'" variant="primary">Open</b-button>
           <template v-slot:footer>
             <small class="text-muted">{{ course.teacher_firstname + ' ' + course.teacher_lastname }}</small>
           </template>
