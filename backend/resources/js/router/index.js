@@ -11,7 +11,7 @@ import VueRouter from "vue-router";
 import StudentDashboard from "../components/StudentDashboard";
 import StudentEnglishClass from "../components/StudentEnglishClass";
 import TeacherEnglishClass from "../components/TeacherEnglishClass";
-import MathClass from "../components/MathClass";
+import StudentMathClass from "../components/StudentMathClass";
 import GeographyClass from "../components/GeographyClass";
 import ScienceClass from "../components/ScienceClass";
 import Login from "../components/Login";
@@ -48,7 +48,7 @@ const routes = [
     { path: "/Teacher_Dashboard", name: 'Teacher_Dashboard', component: Teacher_Dashboard },
     { path: "/StudentEnglishClass", name: 'StudentEnglishClass', component: StudentEnglishClass },
     { path: "/TeacherEnglishClass", name: 'TeacherEnglishClass', component: TeacherEnglishClass },
-    { path: "/math", name: 'math', component: MathClass },
+    { path: "/studentmathclass", name: 'math', component: StudentMathClass },
     { path: "/geography", name: 'geography', component: GeographyClass},
     { path: "/science", name: 'science', component: ScienceClass },
     { path: "/profile", name: 'profile', component: Profile },

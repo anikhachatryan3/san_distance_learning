@@ -9,17 +9,7 @@
                     <SideNav />
                 </div>
             </vs-col>
-            <vs-col w="1">
-                    <b-nav vertical class="w-25" align="left" justified>
-                        <b-button active>Assignments</b-button>
-                        <br />
-                        <b-button active>People</b-button>
-                        <br />
-                        <b-button active>Announcements</b-button>
-                        <br />
-                        <b-button active>Private Messages</b-button>
-                    </b-nav>
-            </vs-col>
+            <vs-col w="1"></vs-col>
             <vs-col w="9">
                 <div id="data" class="leftPadding">
                     <h1>Calendar</h1>

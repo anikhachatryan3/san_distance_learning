@@ -20,11 +20,21 @@
                         <b-button active to="PrivateMessages">Private Messages</b-button>
                     </b-nav>
             </vs-col>
-            <vs-col w="10" v-if="assignment && assignment.is_published">
+            <vs-col w="9" v-if="assignment">
                 <div id="data">
                     <h1>Assignments</h1>
                     <br />
                     <iframe src="https://i.simmer.io/@natkes/wordsearch" style="width:960px;height:600px"></iframe>
+                    <br/>
+                    <vs-button id="submit" @click="assignEnglish()">
+                        Submit Assignment
+                    </vs-button>
+                </div>
+            </vs-col>
+            <vs-col w="9" v-else>
+                <div id="NoAssign">
+                    <h1>Assignments</h1>
+                    <h2>No assignments due!</h2>
                 </div>
             </vs-col>
         </vs-row>
@@ -53,8 +63,23 @@ export default {
     let self = this;
     axios.get('/api/assignments/1').then(function(response) {
         self.assignment = response.data.data
-    });
-  }
+    },);
+  },
+    methods:{
+        assignEnglish() {
+            let self = this;
+            axios.put('/api/assignments/1')
+                .then(function(response) {
+                    alert('assignment submitted');
+                    self.$session.set('published', false);
+                })
+                .catch(function(error) {
+                    alert('error submitting assignment');
+                });
+            this.assignment=false;
+        }
+    }
+
 };
 </script>
 
