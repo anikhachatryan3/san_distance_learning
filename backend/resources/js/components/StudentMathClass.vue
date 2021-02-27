@@ -4,7 +4,7 @@
         <NavBar />
         <br/>
         <vs-row>
-            <vs-col w="2">
+            <vs-col w="1">
                 <div id="side">
                     <SideNav />
                 </div>
@@ -15,7 +15,7 @@
                     <br />
                     <b-button active to="/People">People</b-button>
                     <br />
-                    <b-button active to="/Announcement">Announcements</b-button>
+                    <b-button active to="/Announcement/math">Announcements</b-button>
                     <br />
                     <b-button active to="PrivateMessages">Private Messages</b-button>
                 </b-nav>

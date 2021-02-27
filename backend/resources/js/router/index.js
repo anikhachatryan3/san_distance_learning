@@ -55,7 +55,7 @@ const routes = [
     { path: "/calendar", name: 'calendar', component: Calendar },
     { path: "/assignment", name: 'assignment', component: Assignment},
     { path: "/people", name: 'people', component: People},
-    { path: "/announcement", name: 'announcement', component: Announcement},
+    { path: "/announcement/:className", name: 'announcement', component: Announcement},
     { path: "/privatemessages", name: 'privatemessages', component: PrivateMessages},
     { path: "/TeacherEnglishClass/CreateEnglishAssignment", name: 'CreateEnglishAssignment', component: CreateEnglishAssignment},
 ];

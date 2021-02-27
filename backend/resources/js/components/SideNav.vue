@@ -1,11 +1,11 @@
 <template>
   <div id="maxDivWidth">
     <vs-sidebar background="success" text-white relative v-model="active" open>
-      <vs-sidebar-item v-if="dashboard == 'Teacher'" to="Teacher_Dashboard">
+      <vs-sidebar-item v-if="dashboard == 'Teacher'" to="/Teacher_Dashboard">
         Dashboard
       </vs-sidebar-item>
       <!-- dashboard for teacher -->
-      <vs-sidebar-item v-if="dashboard == 'Student'" to="StudentDashboard">
+      <vs-sidebar-item v-if="dashboard == 'Student'" to="/StudentDashboard">
         Dashboard
       </vs-sidebar-item>
       <!-- dashboard for student -->
