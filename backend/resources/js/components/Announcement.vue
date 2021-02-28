@@ -24,7 +24,7 @@
                     <h1>Announcements</h1>
 <!--                    actual announcements here-->
                     <div v-for="item in announcements">
-                        <div v-if="$route.params.className.toLowerCase()==item.course_name.toLowerCase()">
+                        <div v-if="$route.params.classId==item.course_id">
                             <h5>Subject:</h5>
                             <p>{{item.title}}</p>
                             <h5>Announcement:</h5>
@@ -39,7 +39,7 @@
                         <b-form-group id="input-group-1" label="Subject:" label-for="input-1">
                             <b-form-input
                                 id="input-1"
-                                v-model="form.subject"
+                                v-model="form.title"
                                 placeholder="Enter subject"
                                 required
                             ></b-form-input>
@@ -47,12 +47,12 @@
                         <b-form-group id="input-group-2" label="Announcement:" label-for="input-2">
                              <b-form-input
                                  id="input-1"
-                                 v-model="form.body"
+                                 v-model="form.announcement"
                                  placeholder="Enter body of announcement"
                                  required
                              ></b-form-input>
                         </b-form-group>
-                        <b-button @click="axios.put('/api/announcements', this.form);" type="submit" variant="primary">Submit</b-button>
+                        <b-button @click="submit()" variant="primary">Submit</b-button>
                     </b-form>
                 </vs-col>
             </vs-row>
@@ -88,9 +88,9 @@ export default {
           form: {
               title: "",
               announcement: "",
-              course_name: this.$route.params.className,
+              course_id: this.$route.params.classId,
               // user_id: this.$session.get('user').id,
-              user_id: 1,
+              user_id: this.$session.get('user').id,
           },
           announcements: [],
       }
@@ -104,12 +104,15 @@ export default {
     },
     methods:{
         submit(){
-            //axios.put('/api/announcements', this.form);
+            this.form.course_id = this.$route.params.classId;
+            this.form.user_id = this.$session.get('user').id;
+            axios.post('/api/announcements',this.form);
             let m = this;
             axios.get('/api/announcements')
                 .then(function(response) {
                     m.announcements = response.data.data;
                 });
+            this.create=false;
         }
     },
 };
