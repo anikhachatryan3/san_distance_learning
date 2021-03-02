@@ -1,11 +1,15 @@
 <template>
-  <div class="title">
-    <h1>San Distance Learning</h1>
+  <div>
+    <img
+      class="center"
+      src="../../Pictures/headerlogo.png"
+      alt="Header_Logo"
+    />
   </div>
 </template>
 
 <style scoped>
-  .title {
-    text-align: center;
+  img {
+    width: 20%;
   }
 </style>

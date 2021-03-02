@@ -3,14 +3,18 @@
     <br />
     <br />
     <br />
-    <h1 style="text-align:center">Welcome to San Distance Learning</h1>
+    <img
+      class="center"
+      src="../../Pictures/headerlogo.png"
+      alt="Header_Logo"
+    />
     <br />
     <img
       class="center"
       src="../../Pictures/Logo.png"
       alt="San_Logo"
-      width="50"
-      length="100"
+      width="33"
+      length="75"
     />
     <br />
     <div id="login" style="text-align:center">
