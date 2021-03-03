@@ -58,4 +58,11 @@ class AnnouncementControllerTest extends TestCase
             'announcement' => $announcement->announcement,
         ]);
     }
+
+    public function testDelete() {
+        $announcement = Announcement::firstOrFail();
+        $this->deleteJson(route('announcements.delete', [
+            'announcement' => $announcement->id,
+        ]))->assertSuccessful();
+    }
 }

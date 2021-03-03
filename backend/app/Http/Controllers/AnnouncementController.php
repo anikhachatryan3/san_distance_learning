@@ -35,4 +35,8 @@ class AnnouncementController extends Controller
         $announcements = Announcement::all();
         return AnnouncementResource::collection($announcements);
     }
+
+    public function delete(Announcement $announcement) {
+        return $announcement->delete();
+    }
 }

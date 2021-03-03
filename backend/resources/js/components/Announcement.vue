@@ -23,13 +23,14 @@
                 <vs-col w="9">
                     <h1>Announcements</h1>
 <!--                    actual announcements here-->
-                    <div v-for="item in announcements">
+                    <div v-for="item in announcements" :key="item.id">
                         <div v-if="$route.params.classId==item.course_id">
                             <h5>Subject:</h5>
                             <p>{{item.title}}</p>
                             <h5>Announcement:</h5>
                             <p>{{item.announcement}}</p>
                             <br/>
+                            <b-button v-if="item.user_id==userId" @click="deleteAnnouncement(item)">Delete</b-button>
                             <hr/>
                             <br/>
                         </div>
@@ -84,6 +85,7 @@ export default {
     data(){
       return {
           userRole: this.$session.get('user').role_name,
+          userId: this.$session.get('user').id,
           create: false,
           form: {
               title: "",
@@ -113,7 +115,17 @@ export default {
                     m.announcements = response.data.data;
                 });
             this.create=false;
-        }
+        },
+        deleteAnnouncement(item) {
+            let m = this;
+            axios.delete('/api/announcements/' + item.id)
+                .then(function(response) {
+                    let index = m.announcements.findIndex(function(announcement) {
+                        return announcement.id == item.id
+                    });
+                    m.announcements.splice(index, 1);
+                });
+        },
     },
 };
 </script>
