@@ -16,7 +16,7 @@
               <em>{{ user }}</em>
             </template>
             <b-dropdown-item href="/Profile">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            <b-dropdown-item href="#" @click="logout()">Sign Out</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
@@ -32,6 +32,12 @@ export default {
     user() {
       let u = this.$session.get('user');
       return u.first_name + ' ' + u.last_name;
+    }
+  },
+  methods: {
+    logout() {
+      this.$session.destroy();
+      this.$router.push('/');
     }
   }
 };

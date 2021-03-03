@@ -17,7 +17,9 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $this->createTeacherUser();
-        $this->createStudentUser();
+        for($i = 0; $i < 20; $i++) {
+            $this->createStudentUser();
+        }
     }
 
     private function createTeacherUser() {
@@ -32,13 +34,11 @@ class UsersTableSeeder extends Seeder
     }
 
     private function createStudentUser() {
-        $user = User::factory()->create([
-            'email' => 'student@gmail.com'
-        ]);
+        $user = User::factory()->create();
         $role = Role::where('role', 'Student')->firstOrFail();
         UserRole::factory()->create([
             'user_id' => $user->id,
-            'role_id' => $role->id
+            'role_id' => $role->id,
         ]);
     }
 }
