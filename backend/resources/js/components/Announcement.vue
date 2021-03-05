@@ -13,9 +13,9 @@
                     <b-nav vertical class="w-25" align="left" justified>
                         <b-button active to="#">Assignments</b-button>
                         <br />
-                        <b-button active to="/People">People</b-button>
+                        <b-button active to="People">People</b-button>
                         <br />
-                        <b-button active to="/Announcement/english">Announcements</b-button>
+                        <b-button active :to="'/Announcement/' + $route.params.classId">Announcements</b-button>
                         <br />
                         <b-button active to="PrivateMessages">Private Messages</b-button>
                     </b-nav>

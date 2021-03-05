@@ -10,7 +10,7 @@
         </div>
       </vs-col>
       <vs-col w="9">
-        <div>  
+        <div>
           <b-table striped hover :items="items" :fields="fields"></b-table>
         </div>
       </vs-col>
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Header from "./Header.vue";
 import NavBar from "./NavBar.vue";
 import SideNav from "./SideNav.vue";
@@ -35,26 +36,20 @@ export default {
     return {
       fields: [
         {
-          key: "name",
+          key: "First Name",
           sortable: true
         },
-        { 
-          key: "grade",
-          sortable: true
-        }, 
         {
-          key: "comment",
+          key: "Last Name",
+          sortable: true
+        },
+        {
+          key: "Email",
           sortable: false
-        }  
+        }
       ],
-      
-      items: [
-        { name: 'Neli', grade: 'F', comment: 'fhdjkfs big dumb' },
-        { name: 'Natkes', grade: 'A', comment: 'needs a wheelchair for carrying our entire project on his back' },
-        { name: 'Ani', grade: 'A', comment: 'same as nati' },
-        { name: 'Sally', grade: 'A', comment: 'a literal angel' },
-        { name: 'Samoel', grade: 'A', comment: 'we literally dont deserve you' }
-      ]
+
+      items: []
     }
   }
 };
