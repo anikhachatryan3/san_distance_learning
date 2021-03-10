@@ -31,13 +31,11 @@
                         </b-dropdown>
                     </div>
                     <div id="student side" v-else>
-                    <p> Fill in the blanks and press submit to check your answers</p>
-                    <b-input v-model="num1" type="number"></b-input>
-                    <p> {{sign}} </p>
-                    <b-input v-model="num2" type="number"></b-input>
-                    <p> = {{result}}</p>
-                    <br/>
-                    <b-button @click="correct = checkPair(num1,num2,sign)">Check answer</b-button>
+                        <p> Solve the equation and press submit to check your answers</p>
+                        <p> {{num1}} {{sign}} {{num2}} =</p>
+                        <b-input v-model="result" type="number"></b-input>
+                        <br/>
+                        <b-button @click="correct = checkPair(num1,num2,sign)">Check answer</b-button>
                         <div v-if="showResults">
                             <p style="margin: 0; display: inline;">Your answer is</p>
                             <p v-if="correct" style="margin: 0; display: inline;" align="right">correct</p>
@@ -67,9 +65,9 @@ export default {
     data() {
         return {
             assignment: null,
-            result: Math.floor(Math.random()*100)+1,
-            num1: null,
-            num2: null,
+            result: null,
+            num1: Math.floor(Math.random()*100)+1,
+            num2: Math.floor(Math.random()*100)+1,
             correct: false,
             showResults: false,
             showTeacher: true,
@@ -78,7 +76,8 @@ export default {
         }
     },
     created:{
-        result: Math.floor(Math.random()*100)+1,
+        num1: Math.floor(Math.random()*100)+1,
+        num2: Math.floor(Math.random()*100)+1,
     },
     methods:{
         checkPair(num1, num2, sign) {
