@@ -23,6 +23,7 @@ import People from "../components/People";
 import Announcement from "../components/Announcement";
 import PrivateMessages from "../components/PrivateMessages";
 import CreateEnglishAssignment from "../components/CreateEnglishAssignment";
+import EnglishGame from "../components/EnglishGame";
 
 Vue.use(PortalVue);
 Vue.use(VueRouter);
@@ -58,6 +59,7 @@ const routes = [
     { path: "/announcement/:classId", name: 'announcement', component: Announcement},
     { path: "/privatemessages", name: 'privatemessages', component: PrivateMessages},
     { path: "/TeacherEnglishClass/CreateEnglishAssignment", name: 'CreateEnglishAssignment', component: CreateEnglishAssignment},
+    { path: "/englishgame", name: 'EnglishGame', component: EnglishGame },
 ];
 
 const router = new VueRouter({
