@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\CourseResource;
+use App\Http\Resources\UserResource;
+use App\Models\Course;
 use App\Models\User;
 
 class CourseController extends Controller
@@ -16,5 +18,10 @@ class CourseController extends Controller
         // $user = auth()->user();
         $courses = $user->courses; 
         return CourseResource::collection($courses);
+    }
+
+    public function students(Course $course) {
+        $students = $course->students;
+        return UserResource::collection($students);
     }
 }

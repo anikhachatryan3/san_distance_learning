@@ -29,3 +29,5 @@ Route::get('/announcements', 'App\Http\Controllers\AnnouncementController@index'
 Route::get('/announcements/{announcement}', 'App\Http\Controllers\AnnouncementController@show')->name('announcements.show');
 Route::post('/announcements', 'App\Http\Controllers\AnnouncementController@createAnnouncement')->name('announcements.create');
 Route::delete('/announcements/{announcement}', 'App\Http\Controllers\AnnouncementCOntroller@delete')->name('announcements.delete');
+
+Route::get('/courses/{course}/students', 'App\Http\Controllers\CourseController@students')->name('courses.students');

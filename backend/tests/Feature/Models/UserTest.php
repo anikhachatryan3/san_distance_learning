@@ -15,12 +15,12 @@ class UserTest extends TestCase
         $teacher = User::whereHas('roles', function($query) {
             $query->where('role', 'Teacher');
         })->firstOrFail();
-        $student = User::factory()->create();
         $subject = Subject::firstOrFail();
         $course1 = Course::factory()->create([
             'teacher_id' => $teacher->id,
             'subject_id' => $subject->id
         ]);
+        $student = User::factory()->create();
         UserCourse::factory()->create([
             'user_id' => $student->id,
             'course_id' => $course1->id
