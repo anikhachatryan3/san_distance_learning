@@ -6,12 +6,23 @@
     <vs-row>
       <vs-col w="1">
         <div id="side">
-          <SideNav />
+          <SideNav/>
         </div>
       </vs-col>
+        <vs-col w="1">
+            <b-nav vertical class="w-25" align="left" justified>
+                <b-button active to="#">Assignments</b-button>
+                <br />
+                <b-button active :to="'/people/' + $route.params.classId">People</b-button>
+                <br />
+                <b-button active :to="'/Announcement/' + $route.params.classId">Announcements</b-button>
+                <br />
+                <b-button active to="PrivateMessages">Private Messages</b-button>
+            </b-nav>
+        </vs-col>
       <vs-col w="9">
         <div>
-          <b-table striped hover :items="items" :fields="fields"></b-table>
+          <b-table striped hover :items="people" :fields="fields"></b-table>
         </div>
       </vs-col>
     </vs-row>
@@ -34,24 +45,31 @@ export default {
 
   data() {
     return {
+        course_id: this.$route.params.classId,
       fields: [
         {
-          key: "First Name",
+          key: "first_name",
           sortable: true
         },
         {
-          key: "Last Name",
+          key: "last_name",
           sortable: true
         },
         {
-          key: "Email",
+          key: "email",
           sortable: false
         }
       ],
 
-      items: []
+      people: [],
     }
-  }
+  },
+    created() {
+        let self = this;
+        axios.get('/api/courses/'+ this.course_id +'/students').then(function (response) {
+            self.people = response.data.data
+        },);
+    },
 };
 
 </script>

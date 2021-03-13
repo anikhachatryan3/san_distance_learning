@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8508ca8a-78e0-4821-a698-4a615c856b1a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/components/TeacherMathClass.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/People.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/People.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/StudentEnglishClass.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/StudentEnglishClass.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/StudentMathClass.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/StudentMathClass.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/TeacherEnglishClass.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/TeacherEnglishClass.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +29,14 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\itomp\Desktop\School\Computer Science\Computer Science 490\Git folder\SAN_Distance_Learning\backend\resources\js\components" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -53,7 +63,9 @@
       <workItem from="1614466755964" duration="3682000" />
       <workItem from="1614745975534" duration="1151000" />
       <workItem from="1614918401600" duration="488000" />
-      <workItem from="1615350150803" duration="1304000" />
+      <workItem from="1615350150803" duration="3570000" />
+      <workItem from="1615523185616" duration="622000" />
+      <workItem from="1615669097187" duration="3914000" />
     </task>
     <servers />
   </component>
@@ -65,5 +77,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1038" y="225" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614468114355" />
+    <state x="961" y="0" width="966" height="1047" key="dock-window-1" timestamp="1615671263086">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="961" y="0" width="966" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1615671263086" />
+    <state x="143" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1615670128490">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="143" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615670128490" />
   </component>
 </project>
