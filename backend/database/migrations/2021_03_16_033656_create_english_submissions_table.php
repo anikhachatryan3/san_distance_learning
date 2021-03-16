@@ -18,7 +18,6 @@ class CreateEnglishSubmissionsTable extends Migration
             $table->integer('submission_id')->unsigned();
             $table->integer('english_problem_id')->unsigned();
             $table->string('answer');
-            $table->string('points');
             $table->timestamps();
 
             $table->foreign('submission_id')->references('id')->on('submissions')->onDelete('cascade');
