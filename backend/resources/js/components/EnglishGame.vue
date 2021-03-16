@@ -1,10 +1,11 @@
 <template>
   <div>
-    <h1>Please answer the following questions</h1>
-    correct answer: {{answerCount}}
+    <h1>Please unscramble the following words</h1>
     <div>
       <div v-for="(item, index) in list" :key="index">{{ item.shuffle }} <input v-model="item.guess" type="text" /></div>
       <button @click="correctAnswer" type="submit">Pass</button>
+      <br />
+      Correct answers: {{answerCount}}/3
     </div>
   </div>
 </template>

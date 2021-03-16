@@ -18,7 +18,7 @@
     />
     <br />
     <div id="login" style="text-align:center">
-      <!-- <h1>Login</h1> -->
+      <h1>Log In</h1>
       <div class="text-danger">{{ error }}</div>
       <br />
         <table class="center">
@@ -32,7 +32,7 @@
           </tr>
         </table>
       <br />
-      <button id="login_button" @click="login()">Login</button>
+      <button id="login_button" @click="login()">Log In</button>
     </div>
   </div>
 </template>
