@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1>Please unscramble the following words</h1>
+    <h5>Please unscramble the following words: </h5>
     <div>
       <div v-for="(item, index) in list" :key="index">{{ item.shuffle }} <input v-model="item.guess" type="text" /></div>
-      <button @click="correctAnswer" type="submit">Pass</button>
+      <button @click="correctAnswer" type="submit">Submit</button>
       <br />
       Correct answers: {{answerCount}}/3
     </div>
