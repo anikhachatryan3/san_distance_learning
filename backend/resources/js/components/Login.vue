@@ -18,15 +18,19 @@
     />
     <br />
     <div id="login" style="text-align:center">
-      <h1>Login</h1>
+      <!-- <h1>Login</h1> -->
       <div class="text-danger">{{ error }}</div>
-      <div>
-        Email: <input v-model="email" type="email" @keydown="error = ''" />
-      </div>
-      <div>
-        Password:
-        <input v-model="password" type="password" @keydown="error = ''" />
-      </div>
+      <br />
+        <table class="center">
+          <tr>
+            <th>E-mail: </th>
+            <th><input v-model="email" type="email" @keydown="error = ''" /></th>
+          </tr>
+          <tr>
+            <th>Password: </th>
+            <th><input v-model="password" type="password" @keydown="error = ''" /></th>      
+          </tr>
+        </table>
       <br />
       <button id="login_button" @click="login()">Login</button>
     </div>
