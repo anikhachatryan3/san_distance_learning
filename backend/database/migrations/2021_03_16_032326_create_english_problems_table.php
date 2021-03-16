@@ -13,7 +13,7 @@ class CreateEnglishAssignmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('english_assignments', function (Blueprint $table) {
+        Schema::create('english_problems', function (Blueprint $table) {
             $table->id();
             $table->integer('assignment_id')->unsigned();
             $table->string('word');

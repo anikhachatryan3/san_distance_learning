@@ -24,13 +24,13 @@ class Assignment extends Model
         return $this->belongsTo(Course::class);
     }
 
-    public function englishAssignments(): HasMany
+    public function englishProblems(): HasMany
     {
-        return $this->hasMany(EnglishAssignment::class);
+        return $this->hasMany(EnglishProblem::class);
     }
 
-    public function mathAssignments(): HasMany
+    public function mathProblems(): HasMany
     {
-        return $this->hasMany(MathAssignment::class);
+        return $this->hasMany(MathProblem::class);
     }
 }

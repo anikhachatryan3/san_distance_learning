@@ -13,7 +13,7 @@ class CreateMathAssignmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('math_assignments', function (Blueprint $table) {
+        Schema::create('math_problems', function (Blueprint $table) {
             $table->id();
             $table->integer('assignment_id');
             $table->integer('num1');
