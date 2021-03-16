@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMathAssignmentsTable extends Migration
+class CreateMathProblemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class CreateMathAssignmentsTable extends Migration
     public function up()
     {
         Schema::create('math_problems', function (Blueprint $table) {
-            $table->id();
-            $table->integer('assignment_id');
+            $table->increments('id');
+            $table->integer('assignment_id')->unsigned();
             $table->integer('num1');
             $table->string('operator');
             $table->integer('num2');

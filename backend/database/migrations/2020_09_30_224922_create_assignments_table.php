@@ -19,8 +19,8 @@ class CreateAssignmentsTable extends Migration
             $table->string('name');
             $table->integer('num_problems');
             $table->integer('total_points');
-            $table->integer('range_min');
-            $table->integer('range_max');
+            $table->integer('range_min')->nullable();
+            $table->integer('range_max')->nullable();
             $table->boolean('is_published');
             $table->timestamps();
 

@@ -14,10 +14,15 @@ class CreateMathSubmissionsTable extends Migration
     public function up()
     {
         Schema::create('math_submissions', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->integer('submission_id')->unsigned();
-            $table->integer('math_assignment_id');
+            $table->integer('math_problem_id')->unsigned();
+            $table->integer('answer');
+            $table->integer('points');
             $table->timestamps();
+
+            $table->foreign('submission_id')->references('id')->on('submissions')->onDelete('cascade');
+            $table->foreign('math_problem_id')->references('id')->on('math_problems')->onDelete('cascade');
         });
     }
 

@@ -18,7 +18,6 @@ class AssignmentsTableSeeder extends Seeder
         Assignment::factory()->create([
             'name' => 'Assignment 1',
             'course_id' => Course::where('name', 'English')->firstOrFail()->id,
-            'points' => 10,
             'is_published' => false
         ]);
     }

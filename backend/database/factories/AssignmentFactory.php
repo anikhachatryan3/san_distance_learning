@@ -23,8 +23,9 @@ class AssignmentFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'points' => $this->faker->randomDigit,
-            'is_published' => $this->faker->boolean
+            'num_problems' => $this->faker->numberBetween(1, 50),
+            'total_points' => $this->faker->numberBetween(1, 100),
+            'is_published' => $this->faker->boolean,
         ];
     }
 }
