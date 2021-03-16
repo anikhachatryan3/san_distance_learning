@@ -18,7 +18,6 @@ class CreateMathSubmissionsTable extends Migration
             $table->integer('submission_id')->unsigned();
             $table->integer('math_problem_id')->unsigned();
             $table->integer('answer');
-            $table->integer('points');
             $table->timestamps();
 
             $table->foreign('submission_id')->references('id')->on('submissions')->onDelete('cascade');

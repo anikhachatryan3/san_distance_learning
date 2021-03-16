@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SubjectsTableSeeder::class);
         $this->call(CoursesTableSeeder::class);
         $this->call(UserCoursesTableSeeder::class);
-        $this->call(AssignmentsTableSeeder::class);
+        $this->call(EnglishAssignmentsTableSeeder::class);
     }
 }
