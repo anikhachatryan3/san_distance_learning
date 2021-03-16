@@ -23,7 +23,7 @@ class MathProblemFactory extends Factory
     {
         return [
             "num1" => $this->faker->numberBetween($min=1, $max=100),
-            "op" => '+',
+            "operator" => '+',
             "num2" => $this->faker->numberBetween($min=1, $max=100),
         ];
     }
