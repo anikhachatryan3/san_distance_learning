@@ -23,4 +23,14 @@ class Assignment extends Model
     {
         return $this->belongsTo(Course::class);
     }
+
+    public function englishAssignments(): HasMany
+    {
+        return $this->hasMany(EnglishAssignment::class);
+    }
+
+    public function mathAssignments(): HasMany
+    {
+        return $this->hasMany(MathAssignment::class);
+    }
 }

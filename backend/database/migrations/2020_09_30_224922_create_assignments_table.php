@@ -17,7 +17,10 @@ class CreateAssignmentsTable extends Migration
             $table->increments('id');
             $table->integer('course_id')->unsigned();
             $table->string('name');
-            $table->integer('points');
+            $table->integer('num_problems');
+            $table->integer('total_points');
+            $table->integer('range_min');
+            $table->integer('range_max');
             $table->boolean('is_published');
             $table->timestamps();
 
