@@ -17,7 +17,7 @@ class CreateSubmissionsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('assignment_id')->unsigned();
-            $table->integer('grade'); // percentage
+            $table->integer('grade')->nullable(); // percentage
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
