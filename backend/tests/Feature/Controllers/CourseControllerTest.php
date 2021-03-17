@@ -25,7 +25,7 @@ class CourseControllerTest extends TestCase
      *
      * @return void
      */
-    public function testIndex()
+    public function testStudentCourses()
     {
         $user = User::factory()->create();
         $course = Course::factory()->create([
@@ -37,9 +37,29 @@ class CourseControllerTest extends TestCase
             'course_id' => $course->id,
         ]);
 
-        $this->getJson(route('courses.index', $user))->assertJsonFragment(
+        $this->getJson(route('courses.student-courses', $user))->assertJsonFragment(
             (new CourseResource($course))->toArray(new Request()),
         );
+    }
+
+    public function testTeacherCourses()
+    {
+        $user = User::factory()->create();
+        $course1 = Course::factory()->create([
+            'subject_id' => Subject::firstOrFail()->id,
+            'teacher_id' => $user->id,
+        ]);
+        $course2 = Course::factory()->create([
+            'subject_id' => Subject::firstOrFail()->id,
+            'teacher_id' => $user->id,
+        ]);
+
+        $this->getJson(route('courses.teacher-courses', $user))
+            ->assertJsonFragment(
+                (new CourseResource($course1))->toArray(new Request()),
+            )->assertJsonFragment(
+                (new CourseResource($course2))->toArray(new Request()),
+            );
     }
 
     public function show() {

@@ -9,7 +9,7 @@ use App\Models\User;
 
 class CourseController extends Controller
 {
-    public function index(User $user)
+    public function studentCourses(User $user)
     // public function index()
     {
         // $user = User::whereHas('roles', function($query) {
@@ -17,6 +17,12 @@ class CourseController extends Controller
         // })->firstOrFail();
         // $user = auth()->user();
         $courses = $user->courses; 
+        return CourseResource::collection($courses);
+    }
+
+    public function teacherCourses(User $user)
+    {
+        $courses = $user->teachingCourses;
         return CourseResource::collection($courses);
     }
 
