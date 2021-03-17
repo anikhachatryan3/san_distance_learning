@@ -18,6 +18,7 @@ class CourseResource extends JsonJsonResource
             'teacher_id' => $this->teacher_id,
             'teacher_firstname' => $this->teacher->first_name,
             'teacher_lastname' => $this->teacher->last_name,
+            'assignments' => AssignmentResource::collection($this->assignments),
             'created_at' => $this->created_at->toIso8601String(),
             'updated_at' => $this->updated_at->toIso8601String(),
         ];

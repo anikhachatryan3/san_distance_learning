@@ -40,7 +40,7 @@ class Course extends Model
         return $this->hasMany(Announcement::class);
     }
 
-    public function assigments(): HasMany
+    public function assignments(): HasMany
     {
         return $this->hasMany(Assignment::class);
     }

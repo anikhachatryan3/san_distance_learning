@@ -2,8 +2,10 @@
 
 namespace Tests\Feature\Controllers;
 
+use App\Http\Resources\AssignmentResource;
 use App\Http\Resources\CourseResource;
 use App\Http\Resources\UserResource;
+use App\Models\Assignment;
 use App\Models\Course;
 use App\Models\Subject;
 use App\Models\User;
@@ -25,12 +27,28 @@ class CourseControllerTest extends TestCase
      */
     public function testIndex()
     {
-        $user = User::whereHas('roles', function($query) {
-            $query->where('role', 'Student');
-        })->firstOrFail();
-        $course = Course::firstOrFail();
+        $user = User::factory()->create();
+        $course = Course::factory()->create([
+            'subject_id' => Subject::firstOrFail()->id,
+            'teacher_id' => User::firstOrFail()->id,
+        ]);
+        UserCourse::factory()->create([
+            'user_id' => $user->id,
+            'course_id' => $course->id,
+        ]);
 
         $this->getJson(route('courses.index', $user))->assertJsonFragment(
+            (new CourseResource($course))->toArray(new Request()),
+        );
+    }
+
+    public function show() {
+        $course = Course::factory()->create([
+            'subject_id' => Subject::firstOrFail()->id,
+            'teacher_id' => User::firstOrFail()->id,
+        ]);
+
+        $this->getJson(route('courses.show', $course))->assertJsonFragment(
             (new CourseResource($course))->toArray(new Request()),
         );
     }

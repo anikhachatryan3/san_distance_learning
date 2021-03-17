@@ -19,8 +19,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/login', 'App\Http\Controllers\Auth\LoginController@login')->name('login');
-// Route::get('/users/{user}/courses', 'App\Http\Controllers\CourseController@index')->name('courses.index');
-Route::get('/courses', 'App\Http\Controllers\CourseController@index')->name('courses.index');
+Route::get('/users/{user}/courses', 'App\Http\Controllers\CourseController@index')->name('courses.index');
+// Route::get('/courses', 'App\Http\Controllers\CourseController@index')->name('courses.index');
+Route::get('/courses/{course}', 'App\Http\Controllers\CourseController@show')->name('courses.show');
+Route::get('/courses/{course}/students', 'App\Http\Controllers\CourseController@students')->name('courses.students');
+
+Route::post('/courses/{course}/english-assignment', 'App\Http\Controllers\AssignmentController@createEnglish')->name('courses.createEnglishAssignment');
+Route::post('/courses/{course}/math-assignment', 'App\Http\Controllers\AssignmentController@createMath')->name('courses.createMathAssignment');
 
 Route::get('/assignments/{assignment}', 'App\Http\Controllers\AssignmentController@show')->name('assignments.show');
 Route::put('/assignments/{assignment}', 'App\Http\Controllers\AssignmentController@publishAssignment')->name('assignments.publish');
@@ -29,8 +34,3 @@ Route::get('/announcements', 'App\Http\Controllers\AnnouncementController@index'
 Route::get('/announcements/{announcement}', 'App\Http\Controllers\AnnouncementController@show')->name('announcements.show');
 Route::post('/announcements', 'App\Http\Controllers\AnnouncementController@createAnnouncement')->name('announcements.create');
 Route::delete('/announcements/{announcement}', 'App\Http\Controllers\AnnouncementCOntroller@delete')->name('announcements.delete');
-
-Route::get('/courses/{course}/students', 'App\Http\Controllers\CourseController@students')->name('courses.students');
-
-Route::post('/courses/{course}/english-assignment', 'App\Http\Controllers\AssignmentController@createEnglish')->name('courses.createEnglishAssignment');
-Route::post('/courses/{course}/math-assignment', 'App\Http\Controllers\AssignmentController@createMath')->name('courses.createMathAssignment');

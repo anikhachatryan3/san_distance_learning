@@ -81,6 +81,6 @@ class AssignmentControllerTest extends TestCase
             'range_max' => 75,
             'num_problems' => 5,
             'total_points' => 10,
-        ])->dump()->assertSuccessful();
+        ])->assertSuccessful();
     }
 }
