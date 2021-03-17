@@ -31,3 +31,6 @@ Route::post('/announcements', 'App\Http\Controllers\AnnouncementController@creat
 Route::delete('/announcements/{announcement}', 'App\Http\Controllers\AnnouncementCOntroller@delete')->name('announcements.delete');
 
 Route::get('/courses/{course}/students', 'App\Http\Controllers\CourseController@students')->name('courses.students');
+
+Route::post('/courses/{course}/english-assignment', 'App\Http\Controllers\AssignmentController@createEnglish')->name('courses.createEnglishAssignment');
+Route::post('/courses/{course}/math-assignment', 'App\Http\Controllers\AssignmentController@createMath')->name('courses.createMathAssignment');
