@@ -52,7 +52,8 @@ class AssignmentController extends Controller
             $mathProblem->save();
         }
 
-        return $assignment->mathProblems;
+        $assignment->mathProblems;
+        return new AssignmentResource($assignment);
     }
 
     public function createEnglish(Course $course, Request $request) {
@@ -80,6 +81,7 @@ class AssignmentController extends Controller
             $englishProblem->save();
         }
 
-        return $assignment->englishProblems;
+        $assignment->englishProblems;
+        return new AssignmentResource($assignment);
     }
 }
