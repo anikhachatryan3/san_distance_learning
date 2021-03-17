@@ -43,7 +43,7 @@ export default {
   },
   created() {
     let m = this;
-    axios.get('/api/courses')
+    axios.get('/api/users/' + this.$session.get('user').id + '/teacher-courses')
       .then(function(response) {
         m.courses = response.data.data;
       });

@@ -16,16 +16,25 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->createTeacherUser();
-        for($i = 0; $i < 20; $i++) {
-            $this->createStudentUser();
-        }
+        // teacher
+        $this->createTeacherUser(['first_name' => 'Litzy', 'last_name' => 'Hessel', 'email' => 'teacher@gmail.com']);
+
+        // students
+        $this->createStudentUser(['first_name' => 'Russel', 'last_name' => 'Beer', 'email' => 'russel.beer@gmail.com']);
+        $this->createStudentUser(['first_name' => 'Francis', 'last_name' => 'Nolan', 'email' => 'francis.nolan@gmail.com']);
+        $this->createStudentUser(['first_name' => 'Florencio', 'last_name' => 'Smitham', 'email' => 'florencio.smitham@gmail.com']);
+        $this->createStudentUser(['first_name' => 'Sonia', 'last_name' => 'Haag', 'email' => 'sonia.haag@gmail.com']);
+        $this->createStudentUser(['first_name' => 'Spencer', 'last_name' => 'Huels', 'email' => 'spencer.huels@gmail.com']);
+        $this->createStudentUser(['first_name' => 'Leola', 'last_name' => 'Kshlerin', 'email' => 'leola.kshlerin@gmail.com']);
+        $this->createStudentUser(['first_name' => 'Imani', 'last_name' => 'Huel', 'email' => 'imani.huel@gmail.com']);
+        $this->createStudentUser(['first_name' => 'Sylvan', 'last_name' => 'Graham', 'email' => 'sylvan.graham@gmail.com']);
+        $this->createStudentUser(['first_name' => 'Elinore', 'last_name' => 'Wyman', 'email' => 'elinore.wyman@gmail.com']);
+        $this->createStudentUser(['first_name' => 'Lacey', 'last_name' => 'Hand', 'email' => 'lacey.hand@gmail.com']);
+    
     }
 
-    private function createTeacherUser() {
-        $user = User::factory()->create([
-            'email' => 'teacher@gmail.com'
-        ]);
+    private function createTeacherUser(array $array = []) {
+        $user = User::factory()->create($array);
         $role = Role::where('role', 'Teacher')->firstOrFail();
         UserRole::factory()->create([
             'user_id' => $user->id,
@@ -33,8 +42,8 @@ class UsersTableSeeder extends Seeder
         ]);
     }
 
-    private function createStudentUser() {
-        $user = User::factory()->create();
+    private function createStudentUser(array $array = []) {
+        $user = User::factory()->create($array);
         $role = Role::where('role', 'Student')->firstOrFail();
         UserRole::factory()->create([
             'user_id' => $user->id,

@@ -36,7 +36,7 @@ export default {
   },
   created() {
     let m = this;
-    axios.get('/api/courses')
+    axios.get('/api/users/' + this.$session.get('user').id + '/student-courses')
       .then(function(response) {
         m.courses = response.data.data;
       });
