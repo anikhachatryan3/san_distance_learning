@@ -54,23 +54,23 @@ export default {
         },
         events: [
         {
-            from: '2020-11-30T09:00:00Z',
-            to: '2020-11-30T11:00:00Z',
+            from: '2021-04-05T09:00:00Z',
+            to: '2021-04-05T11:00:00Z',
             data: 'English Class',
         }, // eng class mon
         {
-            from: '2020-12-02T09:00:00Z',
-            to: '2020-12-02T11:00:00Z',
+            from: '2021-04-07T09:00:00Z',
+            to: '2021-04-07T11:00:00Z',
             data: 'English Class',
         }, // eng class wed
         {
-            from: '2020-12-01T10:00:00Z',
-            to: '2020-12-01T13:00:00Z',
+            from: '2021-04-06T10:00:00Z',
+            to: '2020-04-06T13:00:00Z',
             data: 'Math Class',
         }, // math class tues
         {
-            from: '2020-12-03T09:00:00Z',
-            to: '2020-12-03T15:00:00Z',
+            from: '2021-04-08T09:00:00Z',
+            to: '2021-04-08T15:00:00Z',
             data: 'Study',
         } // study
         ],
