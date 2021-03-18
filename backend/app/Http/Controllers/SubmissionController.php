@@ -7,7 +7,7 @@ use App\Models\MathSubmission;
 use App\Models\Submission;
 use Illuminate\Http\Request;
 
-class AssignmentController extends Controller
+class SubmissionController extends Controller
 {
     public function submitMathAssignment(Assignment $assignment, Request $request) {
         $request->validate([
@@ -28,7 +28,7 @@ class AssignmentController extends Controller
             $mathSubmission = new MathSubmission();
             $mathSubmission->submission_id = $submission->id;
             $mathSubmission->math_problem_id = $request->answers[$i]['math_problem_id'];
-            $mathSubmission->answer = $request->answers[$i]['answers'];
+            $mathSubmission->answer = $request->answers[$i]['answer'];
             $mathSubmission->save();
 
             $mathProblem = $mathSubmission->mathProblem;
@@ -54,8 +54,8 @@ class AssignmentController extends Controller
         }
 
         $grade = $points/$assignment->total_points;
-        $mathSubmission->grade = $grade;
-        $mathSubmission->save();
-        return $mathSubmission;
+        $submission->grade = $grade;
+        $submission->save();
+        return $submission;
     }
 }
