@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/login', 'App\Http\Controllers\Auth\LoginController@login')->name('login');
 Route::get('/users/{user}/student-courses', 'App\Http\Controllers\CourseController@studentCourses')->name('courses.student-courses');
 Route::get('/users/{user}/teacher-courses', 'App\Http\Controllers\CourseController@teacherCourses')->name('courses.teacher-courses');
-// Route::get('/courses', 'App\Http\Controllers\CourseController@index')->name('courses.index');
+//Route::get('/courses', 'App\Http\Controllers\CourseController@index')->name('courses.index');
 Route::get('/courses/{course}', 'App\Http\Controllers\CourseController@show')->name('courses.show');
 Route::get('/courses/{course}/students', 'App\Http\Controllers\CourseController@students')->name('courses.students');
 
