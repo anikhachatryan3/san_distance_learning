@@ -65,7 +65,6 @@ class AssignmentControllerTest extends TestCase
                 ]
             ],
             'num_problems' => 5,
-            'total_points' => 10,
         ])->assertSuccessful();
     }
 
@@ -80,7 +79,6 @@ class AssignmentControllerTest extends TestCase
             'operator' => '+',
             'range_max' => 75,
             'num_problems' => 5,
-            'total_points' => 10,
         ])->assertSuccessful();
     }
 }

@@ -36,7 +36,12 @@ class AnnouncementControllerTest extends TestCase
     }
 
     public function testShow() {
-        $announcement = Announcement::firstOrFail();
+        $announcement = Announcement::factory()->create([
+            'user_id' => User::firstOrFail()->id,
+            'course_id' => Course::firstOrFail()->id,
+            'title' => 'Hello',
+            'announcement' => 'First announcement',
+        ]);
         $this->getJson(route('announcements.show', [
             'announcement' => $announcement->id,
         ]))->assertSuccessful()->assertJsonFragment([
@@ -49,7 +54,12 @@ class AnnouncementControllerTest extends TestCase
     }
 
     public function testIndex() {
-        $announcement = Announcement::firstOrFail();
+        $announcement = Announcement::factory()->create([
+            'user_id' => User::firstOrFail()->id,
+            'course_id' => Course::firstOrFail()->id,
+            'title' => 'Hello',
+            'announcement' => 'First announcement',
+        ]);
         $this->getJson(route('announcements.index'))->assertSuccessful()->assertJsonFragment([
             'id' => $announcement->id,
             'user_id' => $announcement->user_id,
@@ -60,7 +70,12 @@ class AnnouncementControllerTest extends TestCase
     }
 
     public function testDelete() {
-        $announcement = Announcement::firstOrFail();
+        $announcement = Announcement::factory()->create([
+            'user_id' => User::firstOrFail()->id,
+            'course_id' => Course::firstOrFail()->id,
+            'title' => 'Hello',
+            'announcement' => 'First announcement',
+        ]);
         $this->deleteJson(route('announcements.delete', [
             'announcement' => $announcement->id,
         ]))->assertSuccessful();

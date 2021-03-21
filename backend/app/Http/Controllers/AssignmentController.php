@@ -29,7 +29,6 @@ class AssignmentController extends Controller
             'operator' => 'required|in:+,-,x,X,*',
             'range_max' => 'required|integer',
             'num_problems' => 'required|integer',
-            'total_points' => 'required|integer',
         ]);
 
         $assignment = new Assignment;
@@ -38,7 +37,6 @@ class AssignmentController extends Controller
         $assignment->range_min = $request->range_min;
         $assignment->range_max = $request->range_max;
         $assignment->num_problems = $request->num_problems;
-        $assignment->total_points = $request->total_points;
         $assignment->save();
 
         for($i=0; $i < $assignment->num_problems; $i++) {
@@ -63,14 +61,12 @@ class AssignmentController extends Controller
             'problems.*.word' => 'required|string',
             'problems.*.url' => 'required|string',
             'num_problems' => 'required|integer',
-            'total_points' => 'required|integer',
         ]);
 
         $assignment = new Assignment;
         $assignment->course_id = $course->id;
         $assignment->name = $request->name;
         $assignment->num_problems = $request->num_problems;
-        $assignment->total_points = $request->total_points;
         $assignment->save();
         
         for($i=0; $i < $assignment->num_problems; $i++) {

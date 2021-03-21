@@ -17,7 +17,7 @@ class AnnouncementController extends Controller
             'announcement' => 'required',
         ]);
         
-        $announcement = new Announcement;
+        $announcement = new Announcement();
         $announcement->user_id = $request->user_id;
         $announcement->course_id = $request->course_id;
         $announcement->title = $request->title;

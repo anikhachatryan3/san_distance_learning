@@ -24,7 +24,6 @@ class MathAssignmentsTableSeeder extends Seeder
             'name' => 'Addition Assignment',
             'course_id' => Course::where('name', 'Math')->firstOrFail()->id,
             'num_problems' => 5,
-            'total_points' => 10,
             'range_min' => 0,
             'range_max' => 100,
             'is_published' => false,

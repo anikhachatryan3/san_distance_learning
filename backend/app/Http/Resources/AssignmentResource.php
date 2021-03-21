@@ -14,7 +14,6 @@ class AssignmentResource extends JsonJsonResource
             'course_name' => $this->course->name,
             'name' => $this->name,
             'num_problems' => $this->num_problems,
-            'total_points' => $this->total_points,
             'range_min' => $this->range_min,
             'range_max' => $this->range_max,
             'is_published' => $this->is_published,

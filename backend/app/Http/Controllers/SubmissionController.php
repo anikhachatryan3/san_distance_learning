@@ -23,7 +23,6 @@ class SubmissionController extends Controller
         $submission->assignment_id = $assignment->id;
         $submission->save();
 
-        $ptEach = $assignment->total_points/$assignment->num_problems;
         $points = 0;
         for($i=0; $i < count($request->answers); $i++) {
             $mathSubmission = new MathSubmission();
@@ -39,22 +38,22 @@ class SubmissionController extends Controller
 
             if($op == '+') {
                 if($num1+$num2 == $mathSubmission->answer) {
-                    $points += $ptEach;
+                    $points += 1;
                 }
             }
             else if($op == '-') {
                 if($num1-$num2 == $mathSubmission->answer) {
-                    $points += $ptEach;
+                    $points += 1;
                 }
             }
             if($op == 'x' || $op == 'X' || $op == '*') {
                 if($num1*$num2 == $mathSubmission->answer) {
-                    $points += $ptEach;
+                    $points += 1;
                 }
             }
         }
 
-        $grade = $points/$assignment->total_points;
+        $grade = $points/$assignment->num_problems;
         $submission->grade = $grade;
         $submission->save();
         return $submission;
@@ -73,7 +72,6 @@ class SubmissionController extends Controller
         $submission->assignment_id = $assignment->id;
         $submission->save();
 
-        $ptEach = $assignment->total_points/$assignment->num_problems;
         $points = 0;
 
         for($i=0; $i < count($request->answers); $i++) {
@@ -87,11 +85,11 @@ class SubmissionController extends Controller
             $word = $englishProblem->word;
 
             if($word == $englishSubmission->answer) {
-                $points += $ptEach;
+                $points += 1;
             }
         }
 
-        $grade = $points/$assignment->total_points;
+        $grade = $points/$assignment->num_problems;
         $submission->grade = $grade;
         $submission->save();
         return $submission;

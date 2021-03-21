@@ -20,7 +20,6 @@ class SubmissionControllerTest extends TestCase {
         $assignment = Assignment::factory()->create([
             'course_id' => Course::firstOrFail()->id,
             'num_problems' => 5,
-            'total_points' => 5,
         ]);
 
         $mathProblem1 = MathProblem::factory()->create([
@@ -94,7 +93,6 @@ class SubmissionControllerTest extends TestCase {
         $assignment = Assignment::factory()->create([
             'course_id' => Course::firstOrFail()->id,
             'num_problems' => 5,
-            'total_points' => 5,
         ]);
 
         $englishProblem1 = EnglishProblem::factory()->create([

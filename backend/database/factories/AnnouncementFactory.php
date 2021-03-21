@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Assignment;
+use App\Models\Announcement;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class AssignmentFactory extends Factory
+class AnnouncementFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Assignment::class;
+    protected $model = Announcement::class;
 
     /**
      * Define the model's default state.
@@ -22,9 +22,8 @@ class AssignmentFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'num_problems' => $this->faker->numberBetween(1, 50),
-            'is_published' => $this->faker->boolean,
+            'title' => $this->faker->words(3, true),
+            'announcement' => $this->faker->sentence(),
         ];
     }
 }

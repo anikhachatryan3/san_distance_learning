@@ -24,7 +24,6 @@ class EnglishAssignmentsTableSeeder extends Seeder
             'name' => 'Animals Assignment',
             'course_id' => Course::where('name', 'English')->firstOrFail()->id,
             'num_problems' => 5,
-            'total_points' => 10,
             'is_published' => false,
         ]);
 

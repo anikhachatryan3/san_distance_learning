@@ -20,10 +20,10 @@ class LoginControllerTest extends TestCase
     public function testLoginSuccess()
     {
         $this->postJson(route('login', [
-            'email' => 'student@gmail.com',
+            'email' => 'russel.beer@gmail.com',
             'password' => 'password'
         ]))->assertJsonFragment([
-            'email' => 'student@gmail.com'
+            'email' => 'russel.beer@gmail.com'
         ]);
         $user = auth()->user();
         $this->assertNotNull($user);
@@ -32,10 +32,10 @@ class LoginControllerTest extends TestCase
     public function testLoginFails()
     {
         $this->postJson(route('login', [
-            'email' => 'student@gmail.com',
+            'email' => 'russel.beer@gmail.com',
             'password' => 'password1'
         ]))->assertJsonFragment([
-            'error' => 'Invalid Email or Password'
+            'email' => 'Invalid Email or Password'
         ]);
 
         $user = auth()->user();
