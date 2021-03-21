@@ -1,5 +1,5 @@
 <template>
-    <div id="profile">
+    <div id="teacherMathClass">
         <Header />
         <NavBar />
         <br/>
@@ -23,7 +23,16 @@
             <vs-col w="10">
                 <div id="data">
                     <h1>Assignments</h1>
-<!--                    SHOW ASSIGNMENTS HERE-->
+                    <div id="assignments" v-for="assign in assignments">
+                        <b-button v-b-toggle.collapse-1 variant="primary">{{assign.name}}</b-button>
+                        <b-collapse id="collapse-1" class="mt-2">
+                            <b-card>
+                                <div v-for="problem in assign.math_problems">
+                                    <p class="card-text"> {{problem.num1}} {{problem.operator}} {{problem.num2}}= </p>
+                                </div>
+                            </b-card>
+                        </b-collapse>
+                    </div>
                     <vs-button active id="create" @click="show">
                         Add Assignment
                     </vs-button>
@@ -32,20 +41,15 @@
                         <p>Assignment name:</p>
                         <b-input v-model="this.assignment.name" type="text"></b-input>
                         <p>Number of exercises:</p>
-                        <b-input v-model="this.assignment.numberOfEX" type="number"></b-input>
-<!--                        <b-dropdown class="m-md-2" text="Choose an operation">-->
-<!--                            <b-dropdown-item @click="setSign('+')">Addition</b-dropdown-item>-->
-<!--                            <b-dropdown-item @click="setSign('-')">Subtraction</b-dropdown-item>-->
-<!--                            <b-dropdown-item @click="setSign('*')">Multiplication</b-dropdown-item>-->
-<!--                        </b-dropdown>-->
-                        <b-radio v-model="this.assignment.op" name="operator" value="+">Addition</b-radio>
-                        <b-radio v-model="this.assignment.op" name="operator" value="-">Subtraction</b-radio>
-                        <b-radio v-model="this.assignment.op" name="operator" value="*">Multiplication</b-radio>
+                        <b-input v-model="this.assignment.num_problems" type="number"></b-input>
+                        <b-radio v-model="this.assignment.operator" name="operator" value="+">Addition</b-radio>
+                        <b-radio v-model="this.assignment.operator" name="operator" value="-">Subtraction</b-radio>
+                        <b-radio v-model="this.assignment.operator" name="operator" value="*">Multiplication</b-radio>
                         <p>Min value:</p>
-                        <b-input v-model="this.assignment.min" type="number"></b-input>
+                        <b-input v-model="this.assignment.range_min" type="number"></b-input>
                         <p>Max value:</p>
-                        <b-input v-model="this.assignment.max" type="number"></b-input>
-                        <vs-button active id="post assignment" @click="this.postAssign"></vs-button>
+                        <b-input v-model="this.assignment.range_max" type="number"></b-input>
+                        <vs-button active id="post assignment" @click="this.postAssign">Add assignment</vs-button>
                     </div>
 
                 </div>
@@ -59,6 +63,7 @@
 import Header from "./Header.vue";
 import NavBar from "./NavBar.vue";
 import SideNav from "./SideNav.vue";
+import axios from "axios";
 
 export default {
     name: "TeacherEnglishClass",
@@ -70,15 +75,23 @@ export default {
     data(){
         return {
             showCreate: false,
+            course_id: this.$route.params.classId,
             assignment:{
                 name: null,
-                numberOfEX: null,
-                op: null,
-                min: null,
-                max: null,
-            }
+                range_min: null,
+                operator: null,
+                range_max: null,
+                num_problems: null,
+            },
 
+            assignments: []
         }
+    },
+    created() {
+        let self = this;
+        axios.get('/api/courses/'+ this.course_id).then(function (response) {
+            self.assignments = response.data.data.assignments
+        },);
     },
     methods:{
         postAssign(){

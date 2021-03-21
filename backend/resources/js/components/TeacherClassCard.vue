@@ -14,7 +14,7 @@
           class="mb-3"
         >
           <b-card-text></b-card-text>
-          <b-button :href="'/teacher' + course.subject_name.toLowerCase() + 'class/' + course.id" variant="primary">Open</b-button>
+          <b-button :to="'/teacher' + course.subject_name.toLowerCase() + 'class/' + course.id" variant="primary">Open</b-button>
 <!--            <b-card-body>-->
 <!--                <b-button @click="Changeimage_vis=!Changeimage_vis">change image</b-button>-->
 <!--                <b-form-input v-if="Changeimage_vis" v-model="changedImage" placeholder="input url"></b-form-input>-->

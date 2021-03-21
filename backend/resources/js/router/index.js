@@ -24,6 +24,7 @@ import Announcement from "../components/Announcement";
 import PrivateMessages from "../components/PrivateMessages";
 import CreateEnglishAssignment from "../components/CreateEnglishAssignment";
 import EnglishGame from "../components/EnglishGame";
+import TeacherMathClass from "../components/TeacherMathClass";
 
 Vue.use(PortalVue);
 Vue.use(VueRouter);
@@ -50,7 +51,7 @@ const routes = [
     { path: "/StudentEnglishClass/:classId", name: 'StudentEnglishClass', component: StudentEnglishClass },
     { path: "/StudentMathClass/:classId", name: 'StudentMathClass', component: StudentMathClass },
     { path: "/TeacherEnglishClass/:classId", name: 'TeacherEnglishClass', component: TeacherEnglishClass },
-    { path: "/TeacherMathClass/:classId", name: 'TeacherMathClass', component: TeacherEnglishClass },
+    { path: "/TeacherMathClass/:classId", name: 'TeacherMathClass', component: TeacherMathClass },
     { path: "/geography", name: 'geography', component: GeographyClass},
     { path: "/science", name: 'science', component: ScienceClass },
     { path: "/profile", name: 'profile', component: Profile },
