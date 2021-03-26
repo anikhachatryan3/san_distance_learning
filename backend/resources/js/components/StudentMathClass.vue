@@ -36,51 +36,6 @@
                             </div>
                         </b-collapse>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <!--                    <div v-if="showTeacher" id="Teacher side">-->
-<!--                        <b-dropdown class="m-md-2" text="Choose an operation">-->
-<!--                            <b-dropdown-item @click="setSign('+')">Addition</b-dropdown-item>-->
-<!--                            <b-dropdown-item @click="setSign('-')">Subtraction</b-dropdown-item>-->
-<!--                            <b-dropdown-item @click="setSign('*')">Multiplication</b-dropdown-item>-->
-<!--                        </b-dropdown>-->
-<!--                    </div>-->
-<!--                    <div id="student side" v-else>-->
-<!--                        <p> Solve the equation and press submit to check your answers</p>-->
-<!--                        <p> {{num1}} {{sign}} {{num2}} =</p>-->
-<!--                        <b-input v-model="result" type="number"></b-input>-->
-<!--                        <br/>-->
-<!--                        <b-button @click="correct = checkPair(num1,num2,sign)">Check answer</b-button>-->
-<!--                        <div v-if="showResults">-->
-<!--                            <p style="margin: 0; display: inline;">Your answer is</p>-->
-<!--                            <p v-if="correct" style="margin: 0; display: inline;" align="right">correct</p>-->
-<!--                            <p v-else style="margin: 0; display: inline;" align="right">incorrect</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
                     <!--                    GAME ENDS HERE-->
                 </div>
             </vs-col>
@@ -113,6 +68,12 @@ export default {
             showTeacher: true,
             sign: '',
             assignments: [],
+
+
+            submission:{
+                user_id: "",
+                answers: [],
+            },
 
         }
     },

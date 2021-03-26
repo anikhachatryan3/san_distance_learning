@@ -44,7 +44,7 @@
                         <p>Number of exercises:</p>
                         <b-input required v-model="assignment.num_problems" type="number"></b-input>
                         <p>Assignment Type:</p>
-                        <b-select v-model="assignment.operator" :options="operator_options" required></b-select></b-radio>-->
+                        <b-select v-model="assignment.operator" :options="operator_options" required></b-select>
                         <p>Min value:</p>
                         <b-input required v-model="assignment.range_min" type="number"></b-input>
                         <p>Max value:</p>
@@ -85,13 +85,17 @@ export default {
             },
             operator_options: [{ text: 'Choose...', value: null }, { text: 'Addition', value: '+' }, { text: 'Subtraction', value: '-' }, { text: 'Multiplication', value: '*' }],
 
-            assignments: []
+            assignments: [],
+            submissions: [],
         }
     },
     created() {
         let self = this;
         axios.get('/api/courses/'+ this.course_id).then(function (response) {
             self.assignments = response.data.data.assignments
+        },);
+        axios.get('/api/assignments/1/submissions').then(function (response) {
+            self.submissions = response.data.data.assignments
         },);
     },
     methods:{
