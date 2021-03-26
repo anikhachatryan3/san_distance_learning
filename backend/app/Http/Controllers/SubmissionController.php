@@ -10,6 +10,14 @@ use Illuminate\Http\Request;
 
 class SubmissionController extends Controller
 {
+    public function index(Assignment $assignment) {
+        $assignment->submissions->each(function($submission) {
+            $submission->mathSubmissions;
+            $submission->englishSubmissions;
+        });
+        return $assignment->submissions;
+    }
+
     public function submitMathAssignment(Assignment $assignment, Request $request) {
         $request->validate([
             'user_id' => 'required|integer|exists:users,id',

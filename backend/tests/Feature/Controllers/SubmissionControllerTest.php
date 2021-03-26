@@ -16,6 +16,12 @@ class SubmissionControllerTest extends TestCase {
         parent::setUp();
     }
 
+    public function testIndex() {
+        $assignment = Assignment::where('name', 'Addition Assignment')->firstOrFail();
+
+        $this->getJson(route('submissions.index', $assignment))->dump();
+    }
+
     public function testSubmitMathAssignment() {
         $assignment = Assignment::factory()->create([
             'course_id' => Course::firstOrFail()->id,
