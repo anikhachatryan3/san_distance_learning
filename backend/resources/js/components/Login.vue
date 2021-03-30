@@ -103,8 +103,10 @@ export default {
 
 body {
   background-image: url("../../Pictures/background.jpg");
+  background-repeat: no-repeat;
   background-color: #cccccc;
-  background-size: cover;
+  background-size: 100%;
+  background-attachment: fixed;
   alt:"Background Image"
 }
 </style>
