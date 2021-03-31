@@ -37,18 +37,31 @@
                     <vs-button active id="create" @click="show">
                         Add Assignment
                     </vs-button>
+                    <br />
                     <div id="add assignment" class="col-md-3 col-md-offset-2" v-if="showCreate">
-                        <h5>Assignment info:</h5>
-                        <p>Assignment name:</p>
-                        <b-input required v-model="assignment.name" type="text"></b-input>
-                        <p>Number of exercises:</p>
-                        <b-input required v-model="assignment.num_problems" type="number"></b-input>
-                        <p>Assignment Type:</p>
-                        <b-select v-model="assignment.operator" :options="operator_options" required></b-select>
-                        <p>Min value:</p>
-                        <b-input required v-model="assignment.range_min" type="number"></b-input>
-                        <p>Max value:</p>
-                        <b-input required v-model="assignment.range_max" type="number"></b-input>
+                        <h5>Create an assignment:</h5>
+                        <table>
+                            <tr>
+                                <th><p>Assignment name: </p></th>
+                                <th><b-input required v-model="assignment.name" type="text"></b-input></th>
+                            </tr>
+                            <tr>
+                                <th><p>Number of exercises:</p></th>
+                                <th><b-input required v-model="assignment.num_problems" type="number"></b-input></th>
+                            </tr>
+                            <tr>
+                                <th><p>Assignment Type:</p></th>
+                                <th><b-select v-model="assignment.operator" :options="operator_options" required></b-select></th>
+                            </tr>
+                            <tr>
+                                <th><p>Min value:</p></th>
+                                <th><b-input required v-model="assignment.range_min" type="number"></b-input></th>
+                            </tr>
+                            <tr>
+                                <th><p>Max value:</p></th>
+                                <th><b-input required v-model="assignment.range_max" type="number"></b-input></th>
+                            </tr>
+                        </table>
                         <vs-button active id="post assignment" @click="postAssign">Add assignment</vs-button>
                     </div>
 
