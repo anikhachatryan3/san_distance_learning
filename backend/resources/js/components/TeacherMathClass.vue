@@ -23,6 +23,8 @@
             <vs-col w="10">
                 <div id="data">
                     <h1>Assignments</h1>
+                    <AssignmentPopup />
+                    <vs-button @click="pop=!pop">popup</vs-button>
                     <div id="assignments" v-for="assign in assignments">
                         <b-button v-b-toggle="'collapse'+assign.id"collapse-1 variant="primary">{{assign.name}}</b-button>
                         <br/>
@@ -77,10 +79,12 @@ import Header from "./Header.vue";
 import NavBar from "./NavBar.vue";
 import SideNav from "./SideNav.vue";
 import axios from "axios";
+import AssignmentPopup from "./AssignmentPopup";
 
 export default {
     name: "TeacherEnglishClass",
     components: {
+        AssignmentPopup,
         Header,
         NavBar,
         SideNav
@@ -88,6 +92,7 @@ export default {
     data(){
         return {
             showCreate: false,
+            pop: false,
             course_id: this.$route.params.classId,
             assignment:{
                 name: "",
