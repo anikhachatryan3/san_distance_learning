@@ -20,14 +20,13 @@ class SubmissionController extends Controller
 
     public function submitMathAssignment(Assignment $assignment, Request $request) {
         $request->validate([
-            'user_id' => 'required|integer|exists:users,id',
             'answers' => 'required|array',
             'answers.*.answer' => 'required|integer',
             'answers.*.math_problem_id' => 'required|integer|exists:math_problems,id',
         ]);
         
         $submission = new Submission();
-        $submission->user_id = $request->user_id;
+        $submission->user_id = auth()->user()->id;
         $submission->assignment_id = $assignment->id;
         $submission->save();
 
@@ -69,14 +68,13 @@ class SubmissionController extends Controller
 
     public function submitEnglishAssignment(Assignment $assignment, Request $request) {
         $request->validate([
-            'user_id' => 'required|integer|exists:users,id',
             'answers' => 'required|array',
             'answers.*.answer' => 'required|string',
             'answers.*.english_problem_id' => 'required|integer|exists:english_problems,id',
         ]);
 
         $submission = new Submission();
-        $submission->user_id = $request->user_id;
+        $submission->user_id = auth()->user()->id;
         $submission->assignment_id = $assignment->id;
         $submission->save();
 

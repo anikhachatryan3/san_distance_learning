@@ -7,6 +7,7 @@ use App\Models\Course;
 use App\Models\EnglishProblem;
 use App\Models\MathProblem;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Tests\TestCase;
 
 class SubmissionControllerTest extends TestCase {
@@ -19,7 +20,7 @@ class SubmissionControllerTest extends TestCase {
     public function testIndex() {
         $assignment = Assignment::where('name', 'Addition Assignment')->firstOrFail();
 
-        $this->getJson(route('submissions.index', $assignment))->dump();
+        $this->getJson(route('submissions.index', $assignment));
     }
 
     public function testSubmitMathAssignment() {
@@ -63,35 +64,36 @@ class SubmissionControllerTest extends TestCase {
             'num2' => 10,
         ]);
 
-        $this->postJson(route('submissions.submitMath', $assignment), [
-            'user_id' => User::firstOrFail()->id,
-            'answers' => [
-                [
-                    'answer' => 119,
-                    'math_problem_id' => $mathProblem1->id,
-                ],
-                [
-                    'answer' => 6,
-                    'math_problem_id' => $mathProblem2->id,
-                ],
-                [
-                    'answer' => 70,
-                    'math_problem_id' => $mathProblem3->id,
-                ],
-                [
-                    'answer' => 11,
-                    'math_problem_id' => $mathProblem4->id,
-                ],
-                [
-                    'answer' => 200,
-                    'math_problem_id' => $mathProblem5->id,
+        $user = User::firstOrFail();
+        $this->actingAs($user)
+            ->postJson(route('submissions.submitMath', $assignment), [
+                'answers' => [
+                    [
+                        'answer' => 119,
+                        'math_problem_id' => $mathProblem1->id,
+                    ],
+                    [
+                        'answer' => 6,
+                        'math_problem_id' => $mathProblem2->id,
+                    ],
+                    [
+                        'answer' => 70,
+                        'math_problem_id' => $mathProblem3->id,
+                    ],
+                    [
+                        'answer' => 11,
+                        'math_problem_id' => $mathProblem4->id,
+                    ],
+                    [
+                        'answer' => 200,
+                        'math_problem_id' => $mathProblem5->id,
+                    ]
                 ]
-            ]
-        ])->assertSuccessful()
-        ->assertJsonFragment([
-            'grade' => 0.8,
-            'assignment_id' => $assignment->id,
-        ]);
+            ])->assertSuccessful()
+            ->assertJsonFragment([
+                'grade' => 0.8,
+                'assignment_id' => $assignment->id,
+            ]);
     }
 
     public function testSubmitEnglishAssignment() {
@@ -131,34 +133,35 @@ class SubmissionControllerTest extends TestCase {
             'url' => 'url'
         ]);
 
-        $this->postJson(route('submissions.submitEnglish', $assignment), [
-            'user_id' => User::firstOrFail()->id,
-            'answers' => [
-                [
-                    'answer' => 'cat',
-                    'english_problem_id' => $englishProblem1->id,
-                ],
-                [
-                    'answer' => 'dog',
-                    'english_problem_id' => $englishProblem2->id,
-                ],
-                [
-                    'answer' => 'chicken',
-                    'english_problem_id' => $englishProblem3->id,
-                ],
-                [
-                    'answer' => 'turtle',
-                    'english_problem_id' => $englishProblem4->id,
-                ],
-                [
-                    'answer' => 'pig',
-                    'english_problem_id' => $englishProblem5->id,
+        $user = User::firstOrFail();
+        $this->actingAs($user)
+            ->postJson(route('submissions.submitEnglish', $assignment), [
+                'answers' => [
+                    [
+                        'answer' => 'cat',
+                        'english_problem_id' => $englishProblem1->id,
+                    ],
+                    [
+                        'answer' => 'dog',
+                        'english_problem_id' => $englishProblem2->id,
+                    ],
+                    [
+                        'answer' => 'chicken',
+                        'english_problem_id' => $englishProblem3->id,
+                    ],
+                    [
+                        'answer' => 'turtle',
+                        'english_problem_id' => $englishProblem4->id,
+                    ],
+                    [
+                        'answer' => 'pig',
+                        'english_problem_id' => $englishProblem5->id,
+                    ]
                 ]
-            ]
-        ])->assertSuccessful()
-        ->assertJsonFragment([
-            'grade' => 0.8,
-            'assignment_id' => $assignment->id,
-        ]);
+            ])->assertSuccessful()
+            ->assertJsonFragment([
+                'grade' => 0.8,
+                'assignment_id' => $assignment->id,
+            ]);
     }
 }
