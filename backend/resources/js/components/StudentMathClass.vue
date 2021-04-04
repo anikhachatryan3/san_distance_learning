@@ -32,9 +32,10 @@
                             <div v-for="(problem, index) in assign.math_problems">
                                 <b-card>
                                     <p class="card-text"> {{problem.num1}} {{problem.operator}} {{problem.num2}}= </p>
-                                    <b-input type="number" v-model="submission[assign.id].answers[index].answer"> </b-input>
+                                    <b-input type="number" v-model="submissions[assign.id].answers[index].answer"> </b-input>
                                 </b-card>
                             </div>
+                            <vs-button @click=""></vs-button>
                         </b-collapse>
                     </div>
                     <!--                    GAME ENDS HERE-->
@@ -49,8 +50,6 @@ import Header from "./Header.vue";
 import NavBar from "./NavBar.vue";
 import SideNav from "./SideNav.vue";
 import axios from "axios";
-import {Answer} from "./TS/interfaces.ts"
-import {Submission} from "./TS/interfaces.ts"
 
 
 // interface Submission {
@@ -82,28 +81,26 @@ export default {
             sign: '',
             assignments: [],
 
-
-            submission: Array(Submission),
+            submissions: [{
+                user_id: '',
+                answers: [{
+                    answer: '',
+                    math_problem_id: ''
+                }]
+            }],
 
         }
     },
     async created(){
         let self = this;
         await axios.get('/api/courses/'+ this.course_id).then(function (response) {
-            self.assignments = response.data.data.assignments
-            self.assignments.forEach(function (assignment) {
-                let answers = [];
-                assignment.math_problems.forEach(function (mathProblem) {
-                    let ans = new Answer;
-                    ans.math_problem_id = mathProblem.id;
-                    ans.answer = "";
-                    answers.push(ans);
+            self.assignments = response.data.data.assignments;
+            self.assignments.forEach(function(assign){
+                assign.math_problems.forEach(function (prob,index){
+                  self.submissions[assign.id].user_id=self.$session.get('user').id;
+                  Vue.set(self.submissions[assign.id].answers,index.math_problem_id,prob.id)
                 })
-                let sub = new Submission;
-                sub.user_id = self.$session.get('user').id;
-                sub.answers = answers;
-                self.submission.push(sub);
-            })
+            });
         },);
 
     },
@@ -127,7 +124,16 @@ export default {
 
         doThis(){
             let self = this;
-            console.log(self.submission);
+            self.submissions.splice(500);
+            // self.submissions[0].user_id = self.$session.get('user').id;
+            // self.submissions[1].user_id = self.$session.get('user').id;
+            // console.log(self.submissions[1]);
+        },
+
+        submitAssign(assign, id, more)
+        {
+            let self = this;
+            self.submissions[assign.id].user_id = this.$session.get('user').id;
         }
     },
 };
