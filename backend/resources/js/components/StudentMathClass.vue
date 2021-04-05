@@ -24,7 +24,7 @@
                 <div id="data">
                    <!-- GAME STARTS HERE-->
                     <h1>Assignments</h1>
-                    <vs-button @click="doThis">DOOO</vs-button>
+<!--                    <vs-button @click="doThis">DOOO</vs-button>-->
                     <div id="assignments" v-for="(assign, j) in assignments">
                         <b-button v-b-toggle="'collapse'+assign.id"collapse-1 variant="primary">{{assign.name}}</b-button>
                         <br/>
@@ -32,10 +32,10 @@
                             <div v-for="(problem, index) in assign.math_problems">
                                 <b-card>
                                     <p class="card-text"> {{problem.num1}} {{problem.operator}} {{problem.num2}}= </p>
-                                    <b-input type="number" v-model="submissions[assign.id].answers[index].answer"> </b-input>
+                                    <b-input type="number" v-model="submissions[j].answers[index].answer"> </b-input>
                                 </b-card>
                             </div>
-                            <vs-button @click=""></vs-button>
+                            <vs-button @click="submitAssign(j,assign.id)">Submit Assignment</vs-button>
                         </b-collapse>
                     </div>
                     <!--                    GAME ENDS HERE-->
@@ -81,13 +81,7 @@ export default {
             sign: '',
             assignments: [],
 
-            submissions: [{
-                user_id: '',
-                answers: [{
-                    answer: '',
-                    math_problem_id: ''
-                }]
-            }],
+            submissions: [],
 
         }
     },
@@ -95,11 +89,22 @@ export default {
         let self = this;
         await axios.get('/api/courses/'+ this.course_id).then(function (response) {
             self.assignments = response.data.data.assignments;
+            let i=0;
+            let dummySub={};
+            dummySub.answers = [];
+            let dummyAns={};
+            dummyAns.answer='';
             self.assignments.forEach(function(assign){
-                assign.math_problems.forEach(function (prob,index){
-                  self.submissions[assign.id].user_id=self.$session.get('user').id;
-                  Vue.set(self.submissions[assign.id].answers,index.math_problem_id,prob.id)
+                self.submissions.push(dummySub);
+                assign.math_problems.forEach(function (prob){
+                    dummyAns.math_problem_id = prob.id;
+                    self.submissions[i].answers.push(dummyAns)
+                    dummyAns={};
+                    dummyAns.answer='';
                 })
+                dummySub={};
+                dummySub.answers = [];
+                i++;
             });
         },);
 
@@ -124,16 +129,16 @@ export default {
 
         doThis(){
             let self = this;
-            self.submissions.splice(500);
-            // self.submissions[0].user_id = self.$session.get('user').id;
-            // self.submissions[1].user_id = self.$session.get('user').id;
-            // console.log(self.submissions[1]);
+            self.submissions.forEach(sub=>{
+                console.log(sub);
+            })
         },
 
-        submitAssign(assign, id, more)
+        submitAssign(assignIndex,assignID)
         {
             let self = this;
-            self.submissions[assign.id].user_id = this.$session.get('user').id;
+            let submitItem = self.submissions[assignIndex];
+            axios.post('/api/assignments/'+ assignID +'/submit-math',submitItem);
         }
     },
 };
