@@ -23,10 +23,8 @@
             <vs-col w="10">
                 <div id="data">
                     <h1>Assignments</h1>
-                    <AssignmentPopup />
-                    <vs-button @click="pop=!pop">popup</vs-button>
                     <div id="assignments" v-for="assign in assignments">
-                        <b-button v-b-toggle="'collapse'+assign.id"collapse-1 variant="primary">{{assign.name}}</b-button>
+                        <b-button v-b-toggle="'collapse'+assign.id" collapse-1 variant="primary">{{assign.name}}</b-button>
                         <br/>
                         <b-collapse :id="'collapse'+assign.id" class="mt-2">
                             <b-card>
