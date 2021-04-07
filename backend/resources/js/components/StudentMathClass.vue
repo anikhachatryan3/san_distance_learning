@@ -24,6 +24,7 @@
                 <div id="data">
                    <!-- GAME STARTS HERE-->
                     <h1>Assignments</h1>
+                    <br />
 <!--                    <vs-button @click="doThis">DOOO</vs-button>-->
                     <div id="assignments" v-for="(assign, j) in assignments">
                         <b-button v-b-toggle="'collapse'+assign.id"collapse-1 variant="primary">{{assign.name}}</b-button>
@@ -31,8 +32,12 @@
                         <b-collapse :id="'collapse'+assign.id" class="mt-2">
                             <div v-for="(problem, index) in assign.math_problems">
                                 <b-card>
-                                    <p class="card-text"> {{problem.num1}} {{problem.operator}} {{problem.num2}}= </p>
-                                    <b-input type="number" v-model="submissions[j].answers[index].answer"> </b-input>
+                                    <table>
+                                        <tr>
+                                            <th><p class="card-text"> {{problem.num1}} {{problem.operator}} {{problem.num2}} = </p></th>
+                                            <th><b-input type="number" v-model="submissions[j].answers[index].answer"> </b-input></th>
+                                        </tr>
+                                    </table>
                                 </b-card>
                             </div>
                             <vs-button @click="submitAssign(j,assign.id)">Submit Assignment</vs-button>
