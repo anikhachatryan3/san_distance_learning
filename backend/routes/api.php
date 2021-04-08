@@ -23,6 +23,7 @@ Route::get('/users/{user}/student-courses', 'App\Http\Controllers\CourseControll
 Route::get('/users/{user}/teacher-courses', 'App\Http\Controllers\CourseController@teacherCourses')->name('courses.teacher-courses');
 //Route::get('/courses', 'App\Http\Controllers\CourseController@index')->name('courses.index');
 Route::get('/courses/{course}', 'App\Http\Controllers\CourseController@show')->name('courses.show');
+Route::get('/courses/{course}/assignments', 'App\Http\Controllers\AssignmentController@index')->name('courses.assignments.index');
 Route::get('/courses/{course}/students', 'App\Http\Controllers\CourseController@students')->name('courses.students');
 
 Route::post('/courses/{course}/english-assignment', 'App\Http\Controllers\AssignmentController@createEnglish')->name('courses.createEnglishAssignment');

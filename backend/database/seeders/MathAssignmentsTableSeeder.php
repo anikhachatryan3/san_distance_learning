@@ -26,7 +26,7 @@ class MathAssignmentsTableSeeder extends Seeder
             'num_problems' => 5,
             'range_min' => 0,
             'range_max' => 100,
-            'is_published' => false,
+            'is_published' => 0,
         ]);
 
         // questions for the math assignment

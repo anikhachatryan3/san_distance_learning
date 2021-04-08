@@ -24,7 +24,7 @@ class EnglishAssignmentsTableSeeder extends Seeder
             'name' => 'Animals Assignment',
             'course_id' => Course::where('name', 'English')->firstOrFail()->id,
             'num_problems' => 5,
-            'is_published' => false,
+            'is_published' => 0,
         ]);
 
         // questions for the english assignment

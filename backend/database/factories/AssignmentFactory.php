@@ -24,7 +24,7 @@ class AssignmentFactory extends Factory
         return [
             'name' => $this->faker->name,
             'num_problems' => $this->faker->numberBetween(1, 50),
-            'is_published' => $this->faker->boolean,
+            'is_published' => $this->faker->numberBetween(0, 1),
         ];
     }
 }

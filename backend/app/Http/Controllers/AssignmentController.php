@@ -11,6 +11,31 @@ use Illuminate\Http\Request;
 
 class AssignmentController extends Controller
 {
+    public function index(Course $course, Request $request) {
+        request()->validate([
+            'user_id' => 'nullable|exists:users,id',
+            'completed' => 'nullable|string', // 0 or 1
+            'is_published' => 'nullable|string', // 0 or 1
+        ]);
+
+        $assignments = Assignment::where('course_id', $course->id);
+        if($request->is_published === 1) {
+            $assignments->where('is_published', true);
+        }
+        if($request->completed === "1") {
+            $assignments->whereHas('submissions', function($query) use ($request) {
+                $query->where('user_id', $request->user_id);
+            });
+        }
+        elseif($request->completed === "0") {
+            $assignments->whereDoesntHave('submissions', function($query) use ($request) {
+                $query->where('user_id', $request->user_id);
+            });
+        }
+        $assignments = $assignments->get();
+        return AssignmentResource::collection($assignments);
+    }
+
     public function publishAssignment(Assignment $assignment)
     {
         $assignment->is_published = true;

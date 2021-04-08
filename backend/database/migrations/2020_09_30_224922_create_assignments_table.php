@@ -20,7 +20,7 @@ class CreateAssignmentsTable extends Migration
             $table->integer('num_problems');
             $table->integer('range_min')->nullable();
             $table->integer('range_max')->nullable();
-            $table->boolean('is_published')->default(true);
+            $table->integer('is_published')->default(0);
             $table->timestamps();
 
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');

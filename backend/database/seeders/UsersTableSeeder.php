@@ -25,11 +25,6 @@ class UsersTableSeeder extends Seeder
         $this->createStudentUser(['first_name' => 'Florencio', 'last_name' => 'Smitham', 'email' => 'florencio.smitham@gmail.com']);
         $this->createStudentUser(['first_name' => 'Sonia', 'last_name' => 'Haag', 'email' => 'sonia.haag@gmail.com']);
         $this->createStudentUser(['first_name' => 'Spencer', 'last_name' => 'Huels', 'email' => 'spencer.huels@gmail.com']);
-        $this->createStudentUser(['first_name' => 'Leola', 'last_name' => 'Kshlerin', 'email' => 'leola.kshlerin@gmail.com']);
-        $this->createStudentUser(['first_name' => 'Imani', 'last_name' => 'Huel', 'email' => 'imani.huel@gmail.com']);
-        $this->createStudentUser(['first_name' => 'Sylvan', 'last_name' => 'Graham', 'email' => 'sylvan.graham@gmail.com']);
-        $this->createStudentUser(['first_name' => 'Elinore', 'last_name' => 'Wyman', 'email' => 'elinore.wyman@gmail.com']);
-        $this->createStudentUser(['first_name' => 'Lacey', 'last_name' => 'Hand', 'email' => 'lacey.hand@gmail.com']);
     
     }
 
