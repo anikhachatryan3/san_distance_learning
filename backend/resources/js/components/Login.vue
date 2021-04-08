@@ -105,7 +105,7 @@ body {
   background-image: url("../../Pictures/background.jpg");
   background-repeat: no-repeat;
   background-color: #cccccc;
-  background-size: 100%;
+  background-size: 100% 100%;
   background-attachment: fixed;
   alt:"Background Image"
 }
