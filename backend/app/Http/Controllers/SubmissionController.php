@@ -6,6 +6,7 @@ use App\Models\Assignment;
 use App\Models\MathSubmission;
 use App\Models\EnglishSubmission;
 use App\Models\Submission;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SubmissionController extends Controller
@@ -18,7 +19,7 @@ class SubmissionController extends Controller
         return $assignment->submissions;
     }
 
-    public function submitMathAssignment(Assignment $assignment, Request $request) {
+    public function submitMathAssignment(Assignment $assignment, User $user, Request $request) {
         $request->validate([
             'answers' => 'required|array',
             'answers.*.answer' => 'required|integer',
@@ -26,7 +27,7 @@ class SubmissionController extends Controller
         ]);
         
         $submission = new Submission();
-        $submission->user_id = auth()->user()->id;
+        $submission->user_id = $user->id;
         $submission->assignment_id = $assignment->id;
         $submission->save();
 
@@ -66,7 +67,7 @@ class SubmissionController extends Controller
         return $submission;
     }
 
-    public function submitEnglishAssignment(Assignment $assignment, Request $request) {
+    public function submitEnglishAssignment(Assignment $assignment, User $user, Request $request) {
         $request->validate([
             'answers' => 'required|array',
             'answers.*.answer' => 'required|string',
@@ -74,7 +75,7 @@ class SubmissionController extends Controller
         ]);
 
         $submission = new Submission();
-        $submission->user_id = auth()->user()->id;
+        $submission->user_id = $user->id;
         $submission->assignment_id = $assignment->id;
         $submission->save();
 

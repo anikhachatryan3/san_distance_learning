@@ -30,8 +30,8 @@ Route::post('/courses/{course}/math-assignment', 'App\Http\Controllers\Assignmen
 
 Route::get('/assignments/{assignment}', 'App\Http\Controllers\AssignmentController@show')->name('assignments.show');
 Route::put('/assignments/{assignment}', 'App\Http\Controllers\AssignmentController@publishAssignment')->name('assignments.publish');
-Route::post('/assignments/{assignment}/submit-math', 'App\Http\Controllers\SubmissionController@submitMathAssignment')->name('submissions.submitMath');
-Route::post('/assignments/{assignment}/submit-english', 'App\Http\Controllers\SubmissionController@submitEnglishAssignment')->name('submissions.submitEnglish');
+Route::post('/assignments/{assignment}/submit-math/{user}', 'App\Http\Controllers\SubmissionController@submitMathAssignment')->name('submissions.submitMath');
+Route::post('/assignments/{assignment}/submit-english/{user}', 'App\Http\Controllers\SubmissionController@submitEnglishAssignment')->name('submissions.submitEnglish');
 Route::get('/assignments/{assignment}/submissions', 'App\Http\Controllers\SubmissionController@index')->name('submissions.index');
 
 Route::get('/announcements', 'App\Http\Controllers\AnnouncementController@index')->name('announcements.index');

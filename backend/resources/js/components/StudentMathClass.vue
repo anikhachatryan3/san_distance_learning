@@ -143,7 +143,7 @@ export default {
         {
             let self = this;
             let submitItem = self.submissions[assignIndex];
-            axios.post('/api/assignments/'+ assignID +'/submit-math',submitItem);
+            axios.post('/api/assignments/' + assignID + '/submit-math/' + this.$session.get('user').id, submitItem);
         }
     },
 };
