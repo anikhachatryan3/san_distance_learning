@@ -19,7 +19,7 @@ class AssignmentController extends Controller
         ]);
 
         $assignments = Assignment::where('course_id', $course->id);
-        if($request->is_published === 1) {
+        if($request->is_published === "1") {
             $assignments->where('is_published', true);
         }
         if($request->completed === "1") {

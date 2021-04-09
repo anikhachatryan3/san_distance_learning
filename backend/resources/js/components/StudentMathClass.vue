@@ -99,7 +99,7 @@ export default {
     async created(){
         let self = this;
         console.log(self.getter);
-        await axios.get('/api/courses/'+ this.course_id +'/assignments',self.getter).then(function (response) {
+        await axios.get('/api/courses/'+ this.course_id +'/assignments',{ params: self.getter}).then(function (response) {
             self.assignments = response.data.data;
             let i=0;
             let dummySub={};
