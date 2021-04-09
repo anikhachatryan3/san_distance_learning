@@ -17,7 +17,7 @@
                     <br />
                     <b-button active :to="'/Announcement/' + $route.params.classId">Announcements</b-button>
                     <br />
-                    <b-button active to="PrivateMessages">Private Messages</b-button>
+                    <b-button active>Private Messages</b-button>
                 </b-nav>
             </vs-col>
             <vs-col w="10">

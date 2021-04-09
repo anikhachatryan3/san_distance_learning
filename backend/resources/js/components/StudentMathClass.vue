@@ -11,13 +11,13 @@
             </vs-col>
             <vs-col w="1">
                 <b-nav vertical class="w-25" align="left" justified>
-                    <b-button active to="#">Assignments</b-button>
+                    <b-button>Assignments</b-button>
                     <br />
                     <b-button active :to="'/people/' + $route.params.classId">People</b-button>
                     <br />
                     <b-button active to="/Announcement/math">Announcements</b-button>
                     <br />
-                    <b-button active to="PrivateMessages">Private Messages</b-button>
+                    <b-button active >Private Messages</b-button>
                 </b-nav>
             </vs-col>
             <vs-col w="9">
@@ -88,12 +88,19 @@ export default {
 
             submissions: [],
 
+            getter: {
+                user_id: this.$session.get('user').id,
+                completed: "0",
+                is_published: "1"
+            }
+
         }
     },
     async created(){
         let self = this;
-        await axios.get('/api/courses/'+ this.course_id).then(function (response) {
-            self.assignments = response.data.data.assignments;
+        console.log(self.getter);
+        await axios.get('/api/courses/'+ this.course_id +'/assignments',self.getter).then(function (response) {
+            self.assignments = response.data.data;
             let i=0;
             let dummySub={};
             dummySub.answers = [];

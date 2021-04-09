@@ -11,13 +11,14 @@
                 </vs-col>
                 <vs-col w="1">
                     <b-nav vertical class="w-25" align="left" justified>
-                        <b-button active to="#">Assignments</b-button>
+                        <b-button active v-if="$route.params.classId=='1'" :to="'/' + $session.get('user').role_name + 'EnglishClass/1'">Assignments</b-button>
+                        <b-button active v-if="$route.params.classId=='2'" :to="'/' + $session.get('user').role_name + 'MathClass/2'">Assignments</b-button>
                         <br />
-                        <b-button active to="People">People</b-button>
+                        <b-button active :to="'/people/' + $route.params.classId">People</b-button>
                         <br />
                         <b-button active :to="'/Announcement/' + $route.params.classId">Announcements</b-button>
                         <br />
-                        <b-button active to="PrivateMessages">Private Messages</b-button>
+                        <b-button active>Private Messages</b-button>
                     </b-nav>
                 </vs-col>
                 <vs-col w="9">
