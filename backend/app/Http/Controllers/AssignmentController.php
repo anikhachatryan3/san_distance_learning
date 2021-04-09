@@ -62,6 +62,7 @@ class AssignmentController extends Controller
         $assignment->range_min = $request->range_min;
         $assignment->range_max = $request->range_max;
         $assignment->num_problems = $request->num_problems;
+        $assignment->is_published = true;
         $assignment->save();
 
         for($i=0; $i < $assignment->num_problems; $i++) {
