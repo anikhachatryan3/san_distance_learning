@@ -36,4 +36,11 @@ class CourseController extends Controller
         $students = $course->students;
         return UserResource::collection($students);
     }
+
+    public function getSubmissions(Course $course) {
+        $assignments = $course->assignments;
+        foreach($assignments as $assignment) {
+            $assignment->submissions;
+        }
+    }
 }

@@ -31,6 +31,8 @@ Route::get('/courses/{course}/students', 'App\Http\Controllers\CourseController@
 Route::post('/courses/{course}/english-assignment', 'App\Http\Controllers\AssignmentController@createEnglish')->name('courses.createEnglishAssignment');
 Route::post('/courses/{course}/math-assignment', 'App\Http\Controllers\AssignmentController@createMath')->name('courses.createMathAssignment');
 
+Route::get('/courses/{course}/submissions', 'App\Http\Controllers\CourseController@getSubmissions')->name('courses.submissions');
+
 Route::get('/assignments/{assignment}', 'App\Http\Controllers\AssignmentController@show')->name('assignments.show');
 Route::put('/assignments/{assignment}', 'App\Http\Controllers\AssignmentController@publishAssignment')->name('assignments.publish');
 Route::post('/assignments/{assignment}/submit-math/{user}', 'App\Http\Controllers\SubmissionController@submitMathAssignment')->name('submissions.submitMath');
