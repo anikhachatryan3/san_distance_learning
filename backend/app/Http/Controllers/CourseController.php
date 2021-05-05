@@ -42,5 +42,6 @@ class CourseController extends Controller
         foreach($assignments as $assignment) {
             $assignment->submissions;
         }
+        return $assignments;
     }
 }
