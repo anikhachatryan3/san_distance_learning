@@ -8,6 +8,7 @@ use App\Http\Resources\UserResource;
 use App\Models\Assignment;
 use App\Models\Course;
 use App\Models\Subject;
+use App\Models\Submission;
 use App\Models\User;
 use App\Models\UserCourse;
 use Illuminate\Http\Request;
@@ -93,6 +94,43 @@ class CourseControllerTest extends TestCase
             'course' => $course->id,
         ]))->assertJsonFragment(
             (new UserResource($student))->toArray(new Request()),
+        );
+    }
+
+    public function testGetSubmissions() {
+        $course = Course::factory()->create([
+            'subject_id' => Subject::firstOrFail()->id,
+            'teacher_id' => User::firstOrFail()->id,
+        ]);
+
+        $assignment1 = Assignment::factory()->create([
+            'course_id' => $course->id,
+        ]);
+
+        $assignment2 = Assignment::factory()->create([
+            'course_id' => $course->id,
+        ]);
+
+        $submission1 = Submission::factory()->create([
+            'assignment_id' => $assignment1->id,
+            'user_id' => User::firstOrFail()->id,
+        ]);
+
+        $submission2 = Submission::factory()->create([
+            'assignment_id' => $assignment2->id,
+            'user_id' => User::firstOrFail()->id,
+        ]);
+
+        $this->getJson(route('courses.submissions', [
+            'course' => $course->id,
+        ]))->assertJsonFragment(
+            $assignment1->toArray(),
+        )->assertJsonFragment(
+            $assignment2->toArray(),
+        )->assertJsonFragment(
+            $submission1->toArray(),
+        )->assertJsonFragment(
+            $submission2->toArray(),
         );
     }
 }
